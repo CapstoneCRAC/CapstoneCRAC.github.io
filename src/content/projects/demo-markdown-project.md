@@ -5,6 +5,9 @@ year: "2025-2026"
 cohortId: "coh3"
 order: 6
 summary: "An interactive pronunciation learning app that helps learners practise commonly confused Mandarin sounds through listening, comparison, and visual feedback."
+cover:
+  src: "/media/projects/markdown-demo/01-home-screen.svg"
+  alt: "Demo home screen for the Mandarin pronunciation app"
 video:
   src: "/media/projects/markdown-demo/demo-video.mp4"
   type: "video/mp4"

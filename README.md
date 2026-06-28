@@ -5,10 +5,10 @@ Minimal static site for showcasing students' capstone projects.
 The first framework uses simple top-level pages:
 
 - Home
-- Examples
+- Projects
 - About Us
 
-The home page is intentionally light. Project examples and public background information live in their own sections. Technical setup is kept in maintainer documentation, not in the public navigation.
+The home page is intentionally light. Student projects and public background information live in their own sections. Technical setup is kept in maintainer documentation, not in the public navigation.
 
 ## Stack
 

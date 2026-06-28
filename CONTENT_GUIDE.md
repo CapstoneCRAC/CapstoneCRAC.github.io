@@ -6,8 +6,8 @@ The Markdown demo shows the proposed admin-friendly workflow:
 
 - Edit `src/content/projects/demo-markdown-project.md`.
 - Put media in `public/media/projects/markdown-demo/`.
-- The Examples page automatically lists Markdown projects.
-- Each project appears at `/examples/project-file-name/`.
+- The Projects page automatically lists Markdown projects.
+- Each project appears at `/projects/project-file-name/`.
 
 ## Markdown Project Example
 
@@ -16,6 +16,9 @@ The Markdown demo shows the proposed admin-friendly workflow:
 title: "Mandarin Pronunciation App"
 student: "Luo Xiangyu"
 year: "2025-2026"
+cover:
+  src: "/media/projects/project-name/cover.jpg"
+  alt: "Project cover image"
 video:
   src: "/media/projects/project-name/video.mp4"
   type: "video/mp4"

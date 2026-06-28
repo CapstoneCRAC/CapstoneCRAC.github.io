@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/content";
+
+const markdownProjects = (await getCollection("projects")).sort((a, b) => {
+  if (a.data.year !== b.data.year) return b.data.year.localeCompare(a.data.year);
+  return a.data.order - b.data.order;
+});
+---
+
+<BaseLayout title="Projects | Capstone Platform">
+  <main>
+    <section class="bg-[#eef4ec]">
+      <div class="mx-auto max-w-7xl px-5 py-12 md:px-8">
+        <h1 class="text-4xl font-semibold">Projects</h1>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-[#435247]">
+          Selected student capstone projects with videos, screenshots, and project stories maintained through Markdown files.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 md:px-8">
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {
+          markdownProjects.map((project) => (
+            <a class="group overflow-hidden rounded-md border border-[#d5dbd2] bg-white shadow-sm transition hover:border-[#79a98e] hover:shadow-md" href={withBase(`/projects/${project.id}/`)}>
+              <img
+                class="aspect-[4/3] w-full bg-[#eef4ec] object-cover"
+                src={withBase(project.data.cover.src)}
+                alt={project.data.cover.alt}
+                loading="lazy"
+              />
+              <div class="p-5">
+                <div class="flex items-start justify-between gap-4 text-sm text-[#59685d]">
+                  <span>{project.data.year}</span>
+                  {project.data.video && (
+                    <span class="rounded-md bg-[#eef4ec] px-2.5 py-1 font-semibold text-[#35624a]">Video</span>
+                  )}
+                </div>
+                <h2 class="mt-4 text-xl font-semibold leading-7 text-[#14231b] group-hover:text-[#123d2d]">{project.data.title}</h2>
+                <p class="mt-2 text-sm font-semibold text-[#435247]">{project.data.student}</p>
+                <p class="mt-4 text-sm leading-6 text-[#59685d]">{project.data.summary}</p>
+                {project.data.gallery.length > 0 && (
+                  <p class="mt-4 text-sm font-semibold text-[#35624a]">{project.data.gallery.length} gallery images</p>
+                )}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

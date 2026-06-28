@@ -10,6 +10,10 @@ const projects = defineCollection({
     cohortId: z.string(),
     order: z.number(),
     summary: z.string(),
+    cover: z.object({
+      src: z.string(),
+      alt: z.string()
+    }),
     video: z
       .object({
         src: z.string(),
