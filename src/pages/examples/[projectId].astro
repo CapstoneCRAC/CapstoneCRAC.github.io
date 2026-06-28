@@ -1,0 +1,85 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { projectId: project.id },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, student, year, summary, video, gallery } = project.data;
+---
+
+<BaseLayout title={`${title} | Examples`} description={summary}>
+  <main>
+    <section class="bg-[#eef4ec]">
+      <div class="mx-auto max-w-7xl px-5 py-12 md:px-8">
+        <a class="text-sm font-semibold text-[#35624a] hover:text-[#123d2d]" href={withBase("/examples/")}>
+          Back to Examples
+        </a>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight">{title}</h1>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-[#435247]">{summary}</p>
+        <dl class="mt-6 grid gap-3 text-sm text-[#435247] sm:grid-cols-2">
+          <div class="rounded-md border border-[#cfdccc] bg-white px-4 py-3">
+            <dt class="font-semibold text-[#14231b]">Student</dt>
+            <dd class="mt-1">{student}</dd>
+          </div>
+          <div class="rounded-md border border-[#cfdccc] bg-white px-4 py-3">
+            <dt class="font-semibold text-[#14231b]">Year</dt>
+            <dd class="mt-1">{year}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <article class="mx-auto max-w-7xl space-y-10 px-5 py-10 md:px-8">
+      {
+        video && (
+          <section>
+            <h2 class="text-2xl font-semibold">Video</h2>
+            <div class="mt-4 overflow-hidden rounded-md border border-[#d5dbd2] bg-black">
+              <video class="aspect-video w-full bg-black" controls preload="metadata">
+                <source src={withBase(video.src)} type={video.type} />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            {video.caption && <p class="mt-3 text-sm leading-6 text-[#59685d]">{video.caption}</p>}
+          </section>
+        )
+      }
+
+      {
+        gallery.length > 0 && (
+          <section>
+            <h2 class="text-2xl font-semibold">Gallery</h2>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {gallery.map((item) => (
+                <figure class="overflow-hidden rounded-md border border-[#d5dbd2] bg-white shadow-sm">
+                  <img class="aspect-[4/3] w-full object-cover" src={withBase(item.src)} alt={item.alt} loading="lazy" />
+                  <figcaption class="p-4">
+                    <strong class="block text-sm font-semibold text-[#14231b]">{item.title}</strong>
+                    {item.caption && <span class="mt-1 block text-sm leading-6 text-[#59685d]">{item.caption}</span>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <section>
+        <h2 class="text-2xl font-semibold">Project Story</h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-base leading-8 text-[#435247]">
+          <Content />
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>

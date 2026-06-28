@@ -1,0 +1,240 @@
+{
+  "source": {
+    "subject": "Information for Capstone Project Platform Production",
+    "sender": "LEUNG, Ka Yee Bibi [FHM]",
+    "receivedAt": "2026-06-23 17:47",
+    "notes": "Structured from the project information shared by email. Pending figures and media permissions still need confirmation before final publication."
+  },
+  "mediaLinks": {
+    "cpVideoFolder": {
+      "label": "CP video",
+      "url": "https://uedhk-my.sharepoint.com/my?id=%2Fpersonal%2Fbkyleung%5Feduhk%5Fhk%2FDocuments%2FCP%20pathway%20on%20technologies%20in%20teaching%20%5Fwork%2FProject%20Outcome%2FCP%20video&viewid=98abb52c%2Dcc1a%2D4cb0%2D98d8%2D4b71145b6277",
+      "status": "needs access and embed/link permission check"
+    },
+    "cpPlatformFolder": {
+      "label": "CP platform",
+      "url": "https://uedhk-my.sharepoint.com/my?id=%2Fpersonal%2Fbkyleung%5Feduhk%5Fhk%2FDocuments%2FCP%20pathway%20on%20technologies%20in%20teaching%20%5Fwork%2FProject%20Outcome%2FCP%20platform&viewid=98abb52c%2Dcc1a%2D4cb0%2D98d8%2D4b71145b6277",
+      "status": "shared folder for project/platform materials"
+    }
+  },
+  "cohorts": [
+    {
+      "id": "coh1",
+      "label": "Coh1",
+      "year": "2023-24",
+      "involvement": "Pre-CRAC project; baseline cohort.",
+      "studentCount": null,
+      "studentCountStatus": "will be shared later",
+      "platformDisplayPlan": "Students' CP topics will be listed on the platform."
+    },
+    {
+      "id": "coh2",
+      "label": "Coh2",
+      "year": "2024-25",
+      "involvement": "Received initial CRAC project support at the stage of CPII.",
+      "studentCount": null,
+      "studentCountStatus": "not yet provided",
+      "platformDisplayPlan": "Display scope to be confirmed."
+    },
+    {
+      "id": "coh3",
+      "label": "Coh3",
+      "year": "2025-2026",
+      "involvement": "Current cohort, both CP1 and CP2 fully supported by CRAC project resources.",
+      "studentCount": 10,
+      "studentCountStatus": "provided",
+      "platformDisplayPlan": "Students' CPs can be shown as selected examples after the display style is confirmed."
+    },
+    {
+      "id": "coh4",
+      "label": "Coh4",
+      "year": "2026-2027",
+      "involvement": "Upcoming cohort; first to experience the fully revamped CP1.",
+      "studentCount": 8,
+      "studentCountStatus": "provided",
+      "platformDisplayPlan": "Upcoming project entries can be displayed as a preview section if approved."
+    }
+  ],
+  "projects": [
+    {
+      "id": "2025-2026-01-cvc-champ",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 1,
+      "student": "Gurung Aakriti",
+      "studentSubmittedVideo": true,
+      "title": "Language Learning App CVC CHAMP",
+      "description": "A learning app that provides extra support to help children aged 4-5 years old learn segmenting and blending CVC outside the classroom in a fun way!"
+    },
+    {
+      "id": "2025-2026-02-cantonlyricists",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 2,
+      "student": "Chan Chak Fung",
+      "studentSubmittedVideo": true,
+      "title": "CantonLyricists粵填 - Cantonese Lyrics Writing Tool",
+      "description": "A web-based tool that helps users create accurate, melodic, and expressive Cantonese lyrics."
+    },
+    {
+      "id": "2025-2026-03-chinese-multi-syllable-platform",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 3,
+      "student": "Huang Xinyu",
+      "studentSubmittedVideo": false,
+      "title": "Gamified Educational Platform for Mastering Chinese Multi-Syllable Characters",
+      "description": "This platform is designed to provide an engaging and interactive environment where learners can practice and understand complex characters effectively."
+    },
+    {
+      "id": "2025-2026-04-interactive-language-learning-game-platform",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 4,
+      "student": "Lam Tin Lok",
+      "studentSubmittedVideo": true,
+      "title": "Interactive Language Learning Game Platform",
+      "description": "An engaging and academically effective grammar learning game. The game will provide a joyful learning experience that motivates learners through interactive gameplay."
+    },
+    {
+      "id": "2025-2026-05-cantonese-language-learning-game",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 5,
+      "student": "Lee Yau Chun",
+      "studentSubmittedVideo": false,
+      "title": "Cantonese Language Learning Game",
+      "description": "This language learning app is a free arcade-style game that provides a gamified experience for both Cantonese learners and native speakers."
+    },
+    {
+      "id": "2025-2026-06-mandarin-pronunciation-app",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 6,
+      "student": "Luo Xiangyu",
+      "studentSubmittedVideo": true,
+      "title": "A learning app that focuses on improving the standard of Mandarin pronunciation",
+      "description": "The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation. An interactive 3D app that helps learners master Mandarin's tricky nasal (n/ng) and retroflex (zh/ch/sh vs. z/c/s) sounds through 3D articulatory visualization."
+    },
+    {
+      "id": "2025-2026-07-gong-ar",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 7,
+      "student": "Wong Man Huen",
+      "studentSubmittedVideo": false,
+      "title": "GONG AR",
+      "description": "A language learning app to enhance Cantonese pronunciation and expand Cantonese vocabulary through interactive gameplay using AR."
+    },
+    {
+      "id": "2025-2026-08-dragon-digraph",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 8,
+      "student": "Bibi Malaika",
+      "studentSubmittedVideo": false,
+      "title": "Dragon Digraph",
+      "description": "A child-centered learning app for mastering English blends through speech and play."
+    },
+    {
+      "id": "2025-2026-09-adventure-of-prepositions",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 9,
+      "student": "Ngwang Shumei",
+      "studentSubmittedVideo": true,
+      "title": "The Adventure of Prepositions",
+      "description": "Please refer to the student's CP video."
+    },
+    {
+      "id": "2025-2026-10-hong-kong-sign-language",
+      "year": "2025-2026",
+      "cohortId": "coh3",
+      "order": 10,
+      "student": "Chung Shu Nim",
+      "studentSubmittedVideo": true,
+      "title": "Hong Kong Sign Language",
+      "description": "Please refer to the student's CP video."
+    },
+    {
+      "id": "2026-2027-01-pragma",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 1,
+      "student": "Qiu Zhiliang Dennis",
+      "studentSubmittedVideo": false,
+      "title": "PRAGMA",
+      "description": "PRAGMA is an AI-supported pragmatic language training tool for children with ASD, focusing on non-literal language and social cue interpretation."
+    },
+    {
+      "id": "2026-2027-02-mailstone",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 2,
+      "student": "Li Lier Chloe",
+      "studentSubmittedVideo": false,
+      "title": "MailStone",
+      "description": "MailStone is an accessibility-focused academic email assistant that helps SEN students draft polite, policy-aware university emails through guided interaction."
+    },
+    {
+      "id": "2026-2027-03-vocalflow",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 3,
+      "student": "Gu Xinyi April",
+      "studentSubmittedVideo": false,
+      "title": "VocalFlow",
+      "description": "VocalFlow is an acoustic pronunciation training tool that helps Hong Kong English learners improve connected speech, rhythm, linking, and fluency through visual feedback."
+    },
+    {
+      "id": "2026-2027-04-esports-translation-overlay",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 4,
+      "student": "Chan Ching Yi Albury",
+      "studentSubmittedVideo": false,
+      "title": "Real-Time Esports Translation Overlay",
+      "description": "This project proposes a mobile subtitle overlay that captures live esports commentary, transcribes it, translates it with gaming terminology support, and displays subtitles during live streams."
+    },
+    {
+      "id": "2026-2027-05-voxcaster",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 5,
+      "student": "Chan Chun Hei Benson",
+      "studentSubmittedVideo": false,
+      "title": "VoxCaster",
+      "description": "VoxCaster aims to transform live football commentary into personalized emotional commentary styles, such as more exciting, tactical, child-friendly, or nostalgic versions."
+    },
+    {
+      "id": "2026-2027-06-low-pressure-communication-tool",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 6,
+      "student": "Sania Mahmood",
+      "studentSubmittedVideo": false,
+      "title": "Low-Pressure Communication Tool",
+      "description": "This project proposes a low-pressure, non-verbal communication tool for NCS and SEN children aged 4-9, allowing them to express urgent needs, distress, discomfort, or sensory overload without having to speak directly in a busy classroom."
+    },
+    {
+      "id": "2026-2027-07-rag-sen-ncs-school-communication",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 7,
+      "student": "Ma Suet Yi Chloris",
+      "studentSubmittedVideo": false,
+      "title": "RAG-Based AI for SEN/NCS School Communication",
+      "description": "This project proposes an AI assistant that translates and explains Hong Kong school notices, SEN jargon, and school-home communication for non-Chinese-speaking parents and SEN parents."
+    },
+    {
+      "id": "2026-2027-08-lingopop",
+      "year": "2026-2027",
+      "cohortId": "coh4",
+      "order": 8,
+      "student": "Bibi-Hafsa-Menaz",
+      "studentSubmittedVideo": false,
+      "title": "LingoPop",
+      "description": "LingoPop is a sensory-safe phonics mini-game for young ASD learners, using a simple voice-activated interaction where children practise one sound and receive a calm visual reward."
+    }
+  ]
+}

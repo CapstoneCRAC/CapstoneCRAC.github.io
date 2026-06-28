@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/content";
+
+const frameworkLinks = [
+  {
+    href: "/examples/",
+    title: "Examples",
+    description: "Student project records, media showcases, and selected capstone outcomes."
+  },
+  {
+    href: "/about/",
+    title: "About Us",
+    description: "The platform objective, audience, and first-version scope."
+  }
+];
+---
+
+<BaseLayout title="Capstone Project Platform">
+  <main>
+    <section class="bg-[#edf5ee]">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl font-semibold leading-tight text-[#14231b] md:text-6xl">
+            Capstone Project Platform
+          </h1>
+          <p class="mt-5 text-lg leading-8 text-[#4c5d54]">
+            A simple static framework for presenting student capstone projects, project outcomes, and supporting media in a maintainable public-facing site.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="rounded-md bg-[#dcefe7] px-4 py-3 text-sm font-semibold text-[#123d2d] ring-1 ring-[#a9c9bb] hover:bg-[#cce4d9]" href={withBase("/examples/")}>
+              Examples
+            </a>
+            <a class="rounded-md border border-[#aebcad] px-4 py-3 text-sm font-semibold text-[#243128] hover:bg-white" href={withBase("/about/")}>
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 md:px-8">
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          frameworkLinks.map((item) => (
+            <a class="rounded-md border border-[#d8e1d3] bg-white p-5 shadow-sm transition hover:border-[#79a98e] hover:shadow-md" href={withBase(item.href)}>
+              <h2 class="text-xl font-semibold">{item.title}</h2>
+              <p class="mt-3 text-sm leading-6 text-[#627067]">{item.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

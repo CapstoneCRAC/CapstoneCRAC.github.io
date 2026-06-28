@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">Demo practice screen</title>
+  <desc id="desc">A mock practice activity with pronunciation choices.</desc>
+  <rect width="960" height="720" fill="#f7f8f5"/>
+  <rect x="102" y="76" width="756" height="568" rx="18" fill="#ffffff" stroke="#d5dbd2" stroke-width="3"/>
+  <text x="150" y="145" fill="#143b2b" font-family="Arial, sans-serif" font-size="40" font-weight="700">Listen and Compare</text>
+  <circle cx="480" cy="292" r="96" fill="#dcefe7" stroke="#a9c9bb" stroke-width="5"/>
+  <polygon points="456,244 456,340 532,292" fill="#123d2d"/>
+  <rect x="170" y="448" width="260" height="92" rx="12" fill="#e7edf6"/>
+  <text x="245" y="505" fill="#2d4263" font-family="Arial, sans-serif" font-size="31" font-weight="700">an</text>
+  <rect x="530" y="448" width="260" height="92" rx="12" fill="#f4e6c8"/>
+  <text x="600" y="505" fill="#5a4216" font-family="Arial, sans-serif" font-size="31" font-weight="700">ang</text>
+</svg>
