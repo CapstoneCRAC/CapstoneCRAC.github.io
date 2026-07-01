@@ -8,7 +8,7 @@ detailLevel: "full"
 hasVideo: true
 type: "App"
 focus: "Pronunciation"
-summary: "The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation through 3D articulatory visualization."
+summary: "The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation. An interactive 3D app that helps learners master Mandarin’s tricky nasal (n/ng) and retroflex (zh/ch/sh vs. z/c/s) sounds through: 3D Articulatory Visualization."
 cover:
   src: "/media/projects/markdown-demo/01-home-screen.svg"
   alt: "Demo home screen for the Mandarin pronunciation app"
@@ -32,6 +32,4 @@ gallery:
     caption: "The app gives immediate visual feedback after each task."
 ---
 
-The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation.
-
-It uses an interactive 3D approach to help learners master Mandarin's tricky nasal sounds, such as n and ng, and retroflex contrasts, such as zh, ch, sh versus z, c, s.
+The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation. An interactive 3D app that helps learners master Mandarin’s tricky nasal (n/ng) and retroflex (zh/ch/sh vs. z/c/s) sounds through: 3D Articulatory Visualization.

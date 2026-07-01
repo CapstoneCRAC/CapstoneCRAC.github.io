@@ -6,7 +6,7 @@ cohortId: "coh3"
 order: 10
 detailLevel: "full"
 hasVideo: true
-summary: "A video walkthrough is available for this project."
+summary: "Please refer to her CP video."
 ---
 
-A video walkthrough is available for this project.
+Please refer to her CP video.
