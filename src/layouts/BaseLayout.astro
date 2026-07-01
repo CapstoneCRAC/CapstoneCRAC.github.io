@@ -8,14 +8,13 @@ interface Props {
 
 const {
   title,
-  description = "Capstone project showcase platform for student work on emerging technologies in teaching and work contexts."
+  description = "A public archive for capstone project stories, outcomes, and related media."
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/projects/", label: "Projects" },
-  { href: "/about/", label: "About Us" }
+  { href: "/projects/", label: "Projects" }
 ];
 
 function isActive(href: string) {
@@ -37,28 +36,31 @@ function isActive(href: string) {
     <link rel="manifest" href={`${import.meta.env.BASE_URL}favicon/site.webmanifest`} />
     <link rel="shortcut icon" href={`${import.meta.env.BASE_URL}favicon/favicon.ico`} />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
-  <body class="bg-[#f6f8f3] text-[#14231b] antialiased">
-    <header class="border-b border-[#d8e1d3] bg-white/95">
-      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8">
-        <a class="flex items-center gap-3 text-lg font-semibold tracking-normal text-[#143b2b]" href={`${import.meta.env.BASE_URL}`}>
-          <img
-            class="h-9 w-auto"
-            src={`${import.meta.env.BASE_URL}eduhk-logo.png`}
-            alt="The Education University of Hong Kong"
-          />
-          <span class="border-l border-[#d8e1d3] pl-3">Capstone Platform</span>
+  <body>
+    <header class="site-nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href={`${import.meta.env.BASE_URL}`} aria-label="Capstone Platform home">
+          <img class="brand-logo" src={`${import.meta.env.BASE_URL}eduhk-logo.png`} alt="The Education University of Hong Kong" />
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>Capstone Platform</strong>
+          </span>
         </a>
-        <nav class="flex flex-wrap gap-1 text-sm" aria-label="Primary navigation">
+        <nav class="nav-links" aria-label="Primary navigation">
           {
             navItems.map((item) => (
               <a
                 class:list={[
-                  "rounded-md px-3 py-2 font-semibold transition-colors",
-                  isActive(item.href)
-                    ? "bg-[#dcefe7] text-[#123d2d]"
-                    : "text-[#405249] hover:bg-[#f0f5ed] hover:text-[#143b2b]"
+                  "nav-link",
+                  isActive(item.href) ? "is-active" : ""
                 ]}
                 href={`${import.meta.env.BASE_URL}${item.href.replace(/^\//, "")}`}
               >
@@ -70,9 +72,10 @@ function isActive(href: string) {
       </div>
     </header>
     <slot />
-    <footer class="border-t border-[#d8e1d3] bg-white">
-      <div class="mx-auto max-w-7xl px-5 py-6 text-sm leading-6 text-[#627067] md:px-8">
-        First-version framework for the EdUHK capstone project platform.
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>EdUHK capstone project platform.</p>
+        <span>The Education University of Hong Kong</span>
       </div>
     </footer>
   </body>

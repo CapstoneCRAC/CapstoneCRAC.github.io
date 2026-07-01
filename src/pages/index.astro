@@ -1,55 +1,68 @@
 ---
+import { getCollection } from "astro:content";
+import ProjectVisual from "../components/ProjectVisual.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../lib/content";
 
-const frameworkLinks = [
-  {
-    href: "/projects/",
-    title: "Projects",
-    description: "Student project records, media showcases, and selected capstone outcomes."
-  },
-  {
-    href: "/about/",
-    title: "About Us",
-    description: "The platform objective, audience, and first-version scope."
-  }
-];
+const recentProjects = (await getCollection("projects"))
+  .filter((project) => project.data.cohortId === "coh3")
+  .sort((a, b) => {
+    const orderA = a.data.order ?? Number.POSITIVE_INFINITY;
+    const orderB = b.data.order ?? Number.POSITIVE_INFINITY;
+    if (orderA !== orderB) return orderA - orderB;
+    return a.id.localeCompare(b.id);
+  })
+  .slice(0, 3);
+
+function displayYear(year: string) {
+  return year.replaceAll("-", "–");
+}
 ---
 
 <BaseLayout title="Capstone Project Platform">
   <main>
-    <section class="bg-[#edf5ee]">
-      <div class="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-        <div class="max-w-3xl">
-          <h1 class="text-4xl font-semibold leading-tight text-[#14231b] md:text-6xl">
-            Capstone Project Platform
-          </h1>
-          <p class="mt-5 text-lg leading-8 text-[#4c5d54]">
-            A simple static framework for presenting student capstone projects, project outcomes, and supporting media in a maintainable public-facing site.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a class="rounded-md bg-[#dcefe7] px-4 py-3 text-sm font-semibold text-[#123d2d] ring-1 ring-[#a9c9bb] hover:bg-[#cce4d9]" href={withBase("/projects/")}>
-              Projects
-            </a>
-            <a class="rounded-md border border-[#aebcad] px-4 py-3 text-sm font-semibold text-[#243128] hover:bg-white" href={withBase("/about/")}>
-              About Us
-            </a>
-          </div>
-        </div>
-      </div>
+    <section class="wrap hero hero--center">
+      <h1 class="hero-title">
+        Capstone project work,<br />made to be read.
+      </h1>
+      <p class="hero-sub">
+        A quiet public archive for capstone project work — the ideas behind them, the media around them, and the authors who made them.
+      </p>
     </section>
 
-    <section class="mx-auto max-w-7xl px-5 py-10 md:px-8">
-      <div class="grid gap-4 md:grid-cols-2">
-        {
-          frameworkLinks.map((item) => (
-            <a class="rounded-md border border-[#d8e1d3] bg-white p-5 shadow-sm transition hover:border-[#79a98e] hover:shadow-md" href={withBase(item.href)}>
-              <h2 class="text-xl font-semibold">{item.title}</h2>
-              <p class="mt-3 text-sm leading-6 text-[#627067]">{item.description}</p>
-            </a>
-          ))
-        }
+    <section class="wrap featured" aria-labelledby="recent-projects-heading">
+      <div class="section-head">
+        <h2 id="recent-projects-heading">Recent projects</h2>
+        <a class="link-arrow" href={withBase("/projects/")}>
+          View all <span class="link-arrow__icon" aria-hidden="true">→</span>
+        </a>
       </div>
+
+      {
+        recentProjects.length > 0 ? (
+          <div class="project-card-grid">
+            {recentProjects.map((project, index) => (
+              <a class="project-card" href={withBase(`/projects/#${project.id}`)}>
+                <div class="project-card__image">
+                  {
+                    project.data.cover ? (
+                      <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                    ) : (
+                      <ProjectVisual order={project.data.order ?? index + 1} compact />
+                    )
+                  }
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">{project.data.title}</h3>
+                  <p class="project-card__author">{project.data.author} · {displayYear(project.data.year)}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty-state">No projects have been added yet.</p>
+        )
+      }
     </section>
   </main>
 </BaseLayout>

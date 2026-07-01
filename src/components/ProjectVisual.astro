@@ -1,0 +1,15 @@
+---
+interface Props {
+  order: number;
+  compact?: boolean;
+}
+
+const { order, compact = false } = Astro.props;
+const mark = order.toString().padStart(2, "0");
+---
+
+<div class:list={["project-visual", compact ? "project-visual--compact" : ""]} aria-hidden="true">
+  <span class="project-visual__mark">{mark}</span>
+  <span class="project-visual__line project-visual__line--long"></span>
+  <span class="project-visual__line project-visual__line--short"></span>
+</div>

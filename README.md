@@ -1,6 +1,6 @@
 # EdUHK Capstone Project Platform
 
-Minimal static site for showcasing students' capstone projects.
+Minimal static site for showcasing capstone project work.
 
 The first framework uses simple top-level pages:
 
@@ -8,14 +8,14 @@ The first framework uses simple top-level pages:
 - Projects
 - About Us
 
-The home page is intentionally light. Student projects and public background information live in their own sections. Technical setup is kept in maintainer documentation, not in the public navigation.
+The home page is intentionally light. Project stories and public background information live in their own sections. Technical setup is kept in maintainer documentation, not in the public navigation.
 
 ## Stack
 
 - Astro
 - TypeScript
 - Tailwind CSS
-- JSON content
+- Markdown content collections
 - GitHub Pages and GitHub Actions
 
 ## Local Development
@@ -35,9 +35,12 @@ The static output is generated in `dist/`.
 
 ## Content
 
-Project records live in `src/data/capstone-platform-content.json`.
+Project and cohort records live in Markdown:
 
-Update the JSON, commit the change, and push to the main branch. When GitHub Pages is configured to use GitHub Actions, `.github/workflows/deploy.yml` will build and deploy the site.
+- `src/content/cohorts/*.md`
+- `src/content/projects/*.md`
+
+Update the Markdown files, commit the change, and push to the main branch. When GitHub Pages is configured to use GitHub Actions, `.github/workflows/deploy.yml` will build and deploy the site.
 
 ## GitHub Pages Setup
 

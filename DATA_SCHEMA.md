@@ -1,28 +1,38 @@
 # Data Schema
 
-## Cohort
+Public content is stored as Astro Markdown collections.
+
+## Cohort Markdown
+
+Location: `src/content/cohorts/*.md`
 
 | Field | Required | Description |
 |---|---|---|
-| `id` | Yes | Stable machine id, for example `coh3`. |
-| `label` | Yes | Human label, for example `Coh3`. |
-| `year` | Yes | Academic year text. |
-| `involvement` | Yes | Summary of cohort relationship to the project. |
-| `studentCount` | No | Number when confirmed, otherwise `null`. |
-| `studentCountStatus` | Yes | Status note for missing or confirmed counts. |
-| `platformDisplayPlan` | Yes | How the cohort should appear on the platform. |
+| `cohortId` | Yes | Stable machine id, for example `coh3`. |
+| `year` | Yes | Year range, for example `2025-2026`. |
+| `status` | Yes | `Current`, `Upcoming`, or `Past`. |
+| `count` | Yes | Public project count when known, otherwise `null`. |
+| `displayMode` | Yes | `full`, `preview`, or `topics`. |
+| `publiclyVisible` | Yes | `true` only when this cohort should render publicly. |
+| `order` | Yes | Display order on the Projects page. |
 
-## Project
+## Project Markdown
+
+Location: `src/content/projects/*.md`
 
 | Field | Required | Description |
 |---|---|---|
-| `id` | Yes | Stable URL slug. Do not change after publishing. |
-| `year` | Yes | Academic year. |
-| `cohortId` | Yes | Must match a cohort `id`. |
-| `order` | Yes | Display order within the cohort/year. |
-| `student` | Yes | Student or team name. |
-| `studentSubmittedVideo` | Yes | `true` when a CP video exists. |
+| filename | Yes | Stable URL slug. Do not change after publishing. |
 | `title` | Yes | Project title. |
-| `description` | Yes | Short project description. |
+| `author` | Yes | Author or team name. |
+| `year` | Yes | Year range. |
+| `cohortId` | Yes | Must match a cohort `cohortId`. |
+| `order` | No | Optional manual display order within the cohort/year. If omitted, filename order is used. Duplicate values are resolved by filename. |
+| `detailLevel` | Yes | `full` generates a detail page; `preview` appears only in listing panels. |
+| `hasVideo` | Yes | `true` when a public video is available. |
+| `summary` | Yes | Short public project description. |
+| `cover` | No | Optional cover image with `src` and `alt`. |
+| `video` | No | Optional hosted video file metadata. |
+| `gallery` | No | Optional gallery entries with `src`, `alt`, `title`, and optional `caption`. |
 
-Future optional fields can include `coverImage`, `screenshots`, `videoUrl`, `slidesUrl`, `demoUrl`, `githubUrl`, `supervisor`, and `learningOutcomes`.
+Do not put internal email wording, project-support notes, or non-public operational comments in these Markdown files.

@@ -1,27 +1,42 @@
 # Content Guide
 
-The current JSON source remains at `src/data/capstone-platform-content.json`.
+The public site is generated from Markdown content collections.
 
-The Markdown demo shows the proposed admin-friendly workflow:
+## Cohorts
 
-- Edit `src/content/projects/demo-markdown-project.md`.
-- Put media in `public/media/projects/markdown-demo/`.
-- The Projects page automatically lists Markdown projects.
-- Each project appears at `/projects/project-file-name/`.
-
-## Markdown Project Example
+Edit cohort display rules in `src/content/cohorts/*.md`.
 
 ```md
 ---
-title: "Mandarin Pronunciation App"
-student: "Luo Xiangyu"
+cohortId: "coh3"
 year: "2025-2026"
+status: "Current"
+count: 10
+displayMode: "full"
+publiclyVisible: true
+order: 1
+---
+```
+
+Use `publiclyVisible: false` for cohorts that should stay hidden until public data is ready.
+
+## Projects
+
+Each project is a Markdown file in `src/content/projects/`.
+
+```md
+---
+title: "Project Title"
+author: "Author Name"
+year: "2025-2026"
+cohortId: "coh3"
+order: 1
+detailLevel: "full"
+hasVideo: true
+summary: "Short public project description."
 cover:
   src: "/media/projects/project-name/cover.jpg"
   alt: "Project cover image"
-video:
-  src: "/media/projects/project-name/video.mp4"
-  type: "video/mp4"
 gallery:
   - src: "/media/projects/project-name/01-home.jpg"
     alt: "Home screen"
@@ -29,29 +44,30 @@ gallery:
     caption: "Entry point for the app."
 ---
 
-Project description goes here.
+Longer public project story goes here.
 ```
 
-## Add A Project
+Use `detailLevel: "preview"` for upcoming projects that should appear in the Projects page preview panel without generating a full detail page.
 
-1. Add a new object to `projects`.
-2. Use a stable lowercase `id`, such as `2026-2027-09-project-name`.
-3. Fill in `year`, `cohortId`, `order`, `student`, `studentSubmittedVideo`, `title`, and `description`.
-4. Run `pnpm build` before publishing.
+`order` is optional. If it is omitted, the site sorts by the Markdown filename. If two projects use the same `order`, the filename is used as a stable tie-breaker.
 
 ## Current Display Rules
 
-- Coh3 projects are treated as current example records.
-- Coh4 projects are treated as upcoming records.
-- Coh1 and Coh2 are kept at cohort level until full counts and display rules are confirmed.
-- Video badges appear when `studentSubmittedVideo` is `true`.
+- `2025-2026` is visible as Current with 10 full project cards.
+- `2026-2027` is visible as Upcoming with 8 preview cards.
+- `2024-2025` and `2023-2024` are hidden until public project data and display depth are confirmed.
+- The `▸ Video` chip appears when `hasVideo` is `true`.
+- Project order is `order` first, then filename.
 
 ## Maintenance Flow
 
 ```text
-edit src/data/capstone-platform-content.json
+edit src/content/cohorts/*.md
+edit src/content/projects/*.md
 pnpm build
 git add .
 git commit -m "Update project content"
 git push
 ```
+
+Do not add internal email wording, private operational notes, or non-public support descriptions to Markdown frontmatter or public body copy.

@@ -1,54 +1,139 @@
 ---
 import { getCollection } from "astro:content";
+import ProjectVisual from "../components/ProjectVisual.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../lib/content";
 
-const markdownProjects = (await getCollection("projects")).sort((a, b) => {
-  if (a.data.year !== b.data.year) return b.data.year.localeCompare(a.data.year);
-  return a.data.order - b.data.order;
-});
+type SectionStatus = "Current" | "Upcoming" | "Past";
+
+const cohorts = (await getCollection("cohorts"))
+  .filter((cohort) => cohort.data.publiclyVisible)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const projects = await getCollection("projects");
+
+function compareProjects(
+  a: (typeof projects)[number],
+  b: (typeof projects)[number]
+) {
+  const orderA = a.data.order ?? Number.POSITIVE_INFINITY;
+  const orderB = b.data.order ?? Number.POSITIVE_INFINITY;
+  if (orderA !== orderB) return orderA - orderB;
+  return a.id.localeCompare(b.id);
+}
+
+const visibleSections = cohorts
+  .map((cohort) => {
+    const cohortProjects = projects
+      .filter((project) => project.data.cohortId === cohort.data.cohortId)
+      .sort(compareProjects);
+
+    return {
+      cohort,
+      projects: cohortProjects
+    };
+  })
+  .filter((section) => section.projects.length > 0);
+
+function displayYear(year: string) {
+  return year.replaceAll("-", "–");
+}
+
+function projectCountLabel(count: number | null, fallback: number) {
+  const total = count ?? fallback;
+  return `${total} ${total === 1 ? "project" : "projects"}`;
+}
+
+function statusClass(status: SectionStatus) {
+  if (status === "Current") return "status-chip--current";
+  if (status === "Upcoming") return "status-chip--upcoming";
+  return "status-chip--past";
+}
 ---
 
 <BaseLayout title="Projects | Capstone Platform">
   <main>
-    <section class="bg-[#eef4ec]">
-      <div class="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        <h1 class="text-4xl font-semibold">Projects</h1>
-        <p class="mt-4 max-w-3xl text-base leading-7 text-[#435247]">
-          Selected student capstone projects with videos, screenshots, and project stories maintained through Markdown files.
-        </p>
-      </div>
+    <section class="wrap page-head page-head--plain">
+      <h1 class="page-title">Capstone projects</h1>
     </section>
 
-    <section class="mx-auto max-w-7xl px-5 py-10 md:px-8">
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {
-          markdownProjects.map((project) => (
-            <a class="group overflow-hidden rounded-md border border-[#d5dbd2] bg-white shadow-sm transition hover:border-[#79a98e] hover:shadow-md" href={withBase(`/projects/${project.id}/`)}>
-              <img
-                class="aspect-[4/3] w-full bg-[#eef4ec] object-cover"
-                src={withBase(project.data.cover.src)}
-                alt={project.data.cover.alt}
-                loading="lazy"
-              />
-              <div class="p-5">
-                <div class="flex items-start justify-between gap-4 text-sm text-[#59685d]">
-                  <span>{project.data.year}</span>
-                  {project.data.video && (
-                    <span class="rounded-md bg-[#eef4ec] px-2.5 py-1 font-semibold text-[#35624a]">Video</span>
-                  )}
-                </div>
-                <h2 class="mt-4 text-xl font-semibold leading-7 text-[#14231b] group-hover:text-[#123d2d]">{project.data.title}</h2>
-                <p class="mt-2 text-sm font-semibold text-[#435247]">{project.data.student}</p>
-                <p class="mt-4 text-sm leading-6 text-[#59685d]">{project.data.summary}</p>
-                {project.data.gallery.length > 0 && (
-                  <p class="mt-4 text-sm font-semibold text-[#35624a]">{project.data.gallery.length} gallery images</p>
-                )}
+    <section class="wrap project-groups" aria-label="Capstone project cohorts">
+      {
+        visibleSections.map((section) => (
+          <section
+            class:list={[
+              "cohort-section",
+              section.cohort.data.displayMode === "preview" ? "cohort-section--preview" : ""
+            ]}
+            aria-labelledby={`${section.cohort.data.cohortId}-heading`}
+          >
+            <header class="cohort-section__head">
+              <div class="cohort-section__identity">
+                <h2 id={`${section.cohort.data.cohortId}-heading`} class="cohort-section__year">
+                  {displayYear(section.cohort.data.year)}
+                </h2>
+                <span class:list={["status-chip", statusClass(section.cohort.data.status)]}>
+                  {section.cohort.data.status}
+                </span>
               </div>
-            </a>
-          ))
-        }
-      </div>
+              <p class="cohort-section__count">
+                {projectCountLabel(section.cohort.data.count, section.projects.length)}
+              </p>
+            </header>
+
+            {
+              section.cohort.data.displayMode === "full" ? (
+                <div class="current-project-grid">
+                  {section.projects.map((project, index) => (
+                    <a class="full-project-card" id={project.id} href={withBase(`/projects/${project.id}/`)}>
+                      <div class="full-project-card__media">
+                        {
+                          project.data.cover ? (
+                            <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                          ) : (
+                            <ProjectVisual order={project.data.order ?? index + 1} />
+                          )
+                        }
+                      </div>
+                      <div class="full-project-card__body">
+                        <div class="full-project-card__top">
+                          {project.data.hasVideo && <span class="video-chip">▸ Video</span>}
+                        </div>
+                        <h3 class="full-project-card__title">{project.data.title}</h3>
+                        <p class="full-project-card__author">{project.data.author}</p>
+                        <p class="full-project-card__desc">{project.data.summary}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <div class="upcoming-panel">
+                  <div class="upcoming-grid">
+                    {section.projects.map((project, index) => (
+                      <article class="upcoming-card" id={project.id}>
+                        <div class="upcoming-card__media">
+                          {
+                            project.data.cover ? (
+                              <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                            ) : (
+                              <ProjectVisual order={project.data.order ?? index + 1} compact />
+                            )
+                          }
+                        </div>
+                        <div class="upcoming-card__body">
+                          <h3 class="upcoming-card__title">{project.data.title}</h3>
+                          <p class="upcoming-card__author">{project.data.author}</p>
+                          <p class="upcoming-card__desc">{project.data.summary}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+          </section>
+        ))
+      }
     </section>
   </main>
 </BaseLayout>

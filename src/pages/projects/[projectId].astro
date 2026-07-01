@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { withBase } from "../../lib/content";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getCollection("projects", (project) => project.data.detailLevel === "full");
 
   return projects.map((project) => ({
     params: { projectId: project.id },
@@ -14,72 +14,101 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, student, year, summary, video, gallery } = project.data;
+const {
+  title,
+  author,
+  year,
+  summary,
+  video,
+  gallery,
+} = project.data;
+const closingFigure = gallery.length > 0 ? gallery[gallery.length - 1] : null;
+
+function displayYear(value: string) {
+  return value.replace("-", "–");
+}
 ---
 
 <BaseLayout title={`${title} | Projects`} description={summary}>
   <main>
-    <section class="bg-[#eef4ec]">
-      <div class="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        <a class="text-sm font-semibold text-[#35624a] hover:text-[#123d2d]" href={withBase("/projects/")}>
-          Back to Projects
-        </a>
-        <h1 class="mt-4 text-4xl font-semibold leading-tight">{title}</h1>
-        <p class="mt-4 max-w-3xl text-base leading-7 text-[#435247]">{summary}</p>
-        <dl class="mt-6 grid gap-3 text-sm text-[#435247] sm:grid-cols-2">
-          <div class="rounded-md border border-[#cfdccc] bg-white px-4 py-3">
-            <dt class="font-semibold text-[#14231b]">Student</dt>
-            <dd class="mt-1">{student}</dd>
-          </div>
-          <div class="rounded-md border border-[#cfdccc] bg-white px-4 py-3">
-            <dt class="font-semibold text-[#14231b]">Year</dt>
-            <dd class="mt-1">{year}</dd>
-          </div>
-        </dl>
+    <section class="detail-head detail-head--plain">
+      <div class="wrap">
+        <a class="back-link" href={withBase("/projects/")}>← Back to projects</a>
+        <h1 class="detail-title">{title}</h1>
       </div>
     </section>
 
-    <article class="mx-auto max-w-7xl space-y-10 px-5 py-10 md:px-8">
-      {
-        video && (
-          <section>
-            <h2 class="text-2xl font-semibold">Video</h2>
-            <div class="mt-4 overflow-hidden rounded-md border border-[#d5dbd2] bg-black">
-              <video class="aspect-video w-full bg-black" controls preload="metadata">
-                <source src={withBase(video.src)} type={video.type} />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            {video.caption && <p class="mt-3 text-sm leading-6 text-[#59685d]">{video.caption}</p>}
-          </section>
-        )
-      }
-
-      {
-        gallery.length > 0 && (
-          <section>
-            <h2 class="text-2xl font-semibold">Gallery</h2>
-            <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {gallery.map((item) => (
-                <figure class="overflow-hidden rounded-md border border-[#d5dbd2] bg-white shadow-sm">
-                  <img class="aspect-[4/3] w-full object-cover" src={withBase(item.src)} alt={item.alt} loading="lazy" />
-                  <figcaption class="p-4">
-                    <strong class="block text-sm font-semibold text-[#14231b]">{item.title}</strong>
-                    {item.caption && <span class="mt-1 block text-sm leading-6 text-[#59685d]">{item.caption}</span>}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-        )
-      }
-
-      <section>
-        <h2 class="text-2xl font-semibold">Project Story</h2>
-        <div class="mt-4 max-w-3xl space-y-4 text-base leading-8 text-[#435247]">
+    <div class="wrap detail-grid">
+      <article class="detail-main story">
+        <div class="project-story">
           <Content />
         </div>
-      </section>
-    </article>
+
+        {
+          closingFigure && (
+            <figure class="closing-figure">
+              <div class="closing-figure__image">
+                <img src={withBase(closingFigure.src)} alt={closingFigure.alt} loading="lazy" />
+              </div>
+              <figcaption class="figcaption">
+                {closingFigure.caption ?? closingFigure.title}
+              </figcaption>
+            </figure>
+          )
+        }
+      </article>
+
+      <aside class="detail-aside" aria-label="Project details">
+        <section class="panel panel--meta" aria-labelledby="project-info-heading">
+          <div class="panel-label" id="project-info-heading">Project info</div>
+          <dl class="meta-list">
+            <div class="meta-item">
+              <dt>Author</dt>
+              <dd>{author}</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Year</dt>
+              <dd>{displayYear(year)}</dd>
+            </div>
+          </dl>
+        </section>
+
+        {
+          video && (
+            <section class="panel video-panel" aria-labelledby="video-heading">
+              <div class="panel-label" id="video-heading">Video</div>
+              <div class="video-frame">
+                <video controls preload="metadata" aria-label={`${title} demo video`}>
+                  <source src={withBase(video.src)} type={video.type} />
+                  Video playback is unavailable in this browser.
+                </video>
+              </div>
+              <p class="video-meta">
+                {video.caption ?? "Demo walkthrough"}
+                {video.duration && ` · ${video.duration}`}
+              </p>
+            </section>
+          )
+        }
+
+        {
+          gallery.length > 0 && (
+            <section class="panel" aria-labelledby="gallery-heading">
+              <div class="panel-label" id="gallery-heading">Gallery</div>
+              <div class="gallery-list">
+                {gallery.map((item) => (
+                  <a class="gallery-thumb" href={withBase(item.src)} target="_blank" rel="noreferrer">
+                    <div class="gallery-thumb__image">
+                      <img src={withBase(item.src)} alt={item.alt} loading="lazy" />
+                    </div>
+                    <p class="gallery-thumb__caption">{item.caption ?? item.title}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )
+        }
+      </aside>
+    </div>
   </main>
 </BaseLayout>
