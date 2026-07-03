@@ -1,16 +1,20 @@
 # Deployment
 
-## GitHub Pages
+## Cloudflare Pages
 
-This repo includes `.github/workflows/deploy.yml`, based on the official Astro GitHub Pages workflow.
+This site is deployed by Cloudflare Pages from the `main` branch of
+`CapstoneCRAC/CapstoneCRAC.github.io`.
 
-Before deployment:
+Cloudflare Pages settings:
 
-1. Push this folder as the root of the GitHub repository.
-2. In GitHub, open Settings > Pages.
-3. Set the Pages source to GitHub Actions.
-4. Update `astro.config.mjs` with the correct `SITE_URL` and `BASE_PATH`.
-5. Commit the generated lockfile after `pnpm install`.
+- Project: `capstonecrac-github-io`
+- Production branch: `main`
+- Build command: `pnpm build`
+- Build output directory: `dist`
+- Current Pages URL: `https://capstonecrac-github-io.pages.dev/`
+
+When a university domain is ready, add it in Cloudflare Pages > Custom domains
+and update `site` in `astro.config.mjs`.
 
 ## Build Locally
 
@@ -21,6 +25,6 @@ pnpm build
 
 ## Common Fixes
 
-- If links are broken under GitHub Pages, check `BASE_PATH`.
+- If links are broken after changing domains, check `site` and `base` in `astro.config.mjs`.
 - If Actions cannot detect pnpm, make sure `pnpm-lock.yaml` is committed.
-- If media links do not open for reviewers, check SharePoint permissions.
+- If videos do not load, confirm the Markdown `video.src` points to the correct Cloudflare R2 URL.

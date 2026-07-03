@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://capstonecrac.github.io",
+  site: "https://capstonecrac-github-io.pages.dev",
   base: "/",
   devToolbar: {
     enabled: false

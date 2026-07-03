@@ -16,7 +16,8 @@ The home page is intentionally light. Project stories and public background info
 - TypeScript
 - Tailwind CSS
 - Markdown content collections
-- GitHub Pages and GitHub Actions
+- Cloudflare Pages
+- Cloudflare R2 for hosted project videos
 
 ## Local Development
 
@@ -40,13 +41,17 @@ Project and cohort records live in Markdown:
 - `src/content/cohorts/*.md`
 - `src/content/projects/*.md`
 
-Update the Markdown files, commit the change, and push to the main branch. When GitHub Pages is configured to use GitHub Actions, `.github/workflows/deploy.yml` will build and deploy the site.
+Update the Markdown files, commit the change, and push to the main branch.
+Cloudflare Pages will build and deploy the site automatically.
 
-## GitHub Pages Setup
+## Cloudflare Pages Setup
 
-Before final deployment, update these values in `astro.config.mjs`:
+Cloudflare Pages currently uses:
 
-- `site`: the GitHub Pages site URL, such as `https://username.github.io`
-- `base`: the repository path, such as `/repo-name`
+- Project: `capstonecrac-github-io`
+- URL: `https://capstonecrac-github-io.pages.dev/`
+- Build command: `pnpm build`
+- Build output directory: `dist`
 
-For a repository named `username.github.io`, `base` can remain `/`.
+When a university domain is ready, add it in Cloudflare Pages and update
+`site` in `astro.config.mjs`.
