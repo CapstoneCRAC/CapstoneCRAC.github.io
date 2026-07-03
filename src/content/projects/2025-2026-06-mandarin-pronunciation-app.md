@@ -13,7 +13,7 @@ cover:
   src: "/media/projects/markdown-demo/01-home-screen.svg"
   alt: "Demo home screen for the Mandarin pronunciation app"
 video:
-  src: "/media/projects/markdown-demo/demo-video.mp4"
+  src: "https://pub-9e6e581c8fe44c95ae384e5c52d37302.r2.dev/demo-video.mp4"
   type: "video/mp4"
   duration: "2:14"
   caption: "Demo walkthrough"

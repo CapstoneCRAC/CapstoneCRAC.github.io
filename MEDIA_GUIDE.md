@@ -2,7 +2,7 @@
 
 ## Current Approach
 
-The first version references the shared CP video and CP platform folders as external links. This avoids rehosting private or permission-sensitive student materials before the team confirms publishing rules.
+Project videos are stored in Cloudflare R2, not in this GitHub repository. Markdown project records should reference R2-hosted video URLs after the team confirms the media can be public.
 
 ## Recommended File Organization
 
@@ -52,16 +52,26 @@ For this project scale, the expected pattern is several images per project
 across a few dozen projects. After Astro optimization, this should usually stay
 small enough for the GitHub repo and GitHub Pages workflow.
 
-Do not add Cloudflare R2 or another object-storage provider for the current
-phase. Revisit external storage only if optimized repo media becomes too large
-to maintain comfortably.
+Do not add video files to `public/media/`. Keep the repository for source code,
+Markdown, covers, screenshots, and small approved images only.
 
 ## Video Handling
 
-Use one of these approaches after confirmation:
+Use Cloudflare R2 for approved videos. In project Markdown:
 
-- external SharePoint link
-- embedded school-hosted video
-- uploaded static video file, only if permission and file size are acceptable
+```yaml
+video:
+  src: "https://pub-example.r2.dev/example-video.mp4"
+  type: "video/mp4"
+  caption: "Demo walkthrough"
+```
+
+When the Cloudflare Pages site has an R2-backed `/videos/...` route, prefer:
+
+```yaml
+video:
+  src: "/videos/example-video.mp4"
+  type: "video/mp4"
+```
 
 Do not download, rehost, or publish student media unless the team has confirmed that it may appear on the public platform.

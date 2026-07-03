@@ -32,7 +32,7 @@ Location: `src/content/projects/*.md`
 | `hasVideo` | Yes | `true` when a public video is available. |
 | `summary` | Yes | Short public project description. |
 | `cover` | No | Optional cover image with `src` and `alt`. |
-| `video` | No | Optional hosted video file metadata. |
+| `video` | No | Optional R2-hosted video file metadata. Use an absolute R2 URL or the final `/videos/...` route once Cloudflare Pages is serving R2 objects. Do not store video files in this repository. |
 | `gallery` | No | Optional gallery entries with `src`, `alt`, `title`, and optional `caption`. |
 
 Do not put internal email wording, project-support notes, or non-public operational comments in these Markdown files.
