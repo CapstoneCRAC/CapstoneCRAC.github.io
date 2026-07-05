@@ -21,3 +21,11 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+
+# Office temporary lock files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# Local manual build scratch files
+.manual_work/
