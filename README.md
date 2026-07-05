@@ -53,5 +53,8 @@ Cloudflare Pages currently uses:
 - Build command: `pnpm build`
 - Build output directory: `dist`
 
-When a university domain is ready, add it in Cloudflare Pages and update
-`site` in `astro.config.mjs`.
+The current `pages.dev` URL is for testing only. Before production launch,
+university domain support is needed for:
+
+- `capstonecrac.edu.hk` for the main Cloudflare Pages site.
+- `media.capstonecrac.edu.hk` for the Cloudflare R2 video bucket.

@@ -23,3 +23,15 @@ This first version is a static showcase site deployed on Cloudflare Pages.
 Project videos are hosted on Cloudflare R2. It does not include login, CMS
 editing, author self-submission, approval workflow, database backend, comments,
 voting, or live hosting of each project app.
+
+## Production Domain Note
+
+The current Cloudflare URLs are testing links only:
+
+- Site test URL: `https://capstonecrac-github-io.pages.dev/`
+- Video test URLs: `https://pub-*.r2.dev/...`
+
+Before public launch, university domain support is needed for:
+
+- `capstonecrac.edu.hk` for the main Cloudflare Pages site.
+- `media.capstonecrac.edu.hk` for the Cloudflare R2 video bucket.

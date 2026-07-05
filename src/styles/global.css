@@ -983,6 +983,27 @@ select {
   font-family: inherit;
 }
 
+.project-story .inline-video {
+  margin: 2rem 0;
+}
+
+.project-story .inline-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: #0d1a30;
+  object-fit: contain;
+}
+
+.project-story .inline-video figcaption {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
 .closing-figure {
   margin: 2.4rem 0 0;
 }

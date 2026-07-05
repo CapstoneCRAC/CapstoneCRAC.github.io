@@ -37,6 +37,10 @@ summary: "Short public project description."
 cover:
   src: "/media/projects/project-name/cover.jpg"
   alt: "Project cover image"
+video:
+  src: "https://pub-example.r2.dev/project-demo.mp4"
+  type: "video/mp4"
+  caption: "Demo walkthrough"
 gallery:
   - src: "/media/projects/project-name/01-home.jpg"
     alt: "Home screen"
@@ -45,6 +49,8 @@ gallery:
 ---
 
 Longer public project story goes here.
+
+[Video: Inline demo video placed inside the project story](https://pub-example.r2.dev/project-demo.mp4)
 ```
 
 Use `detailLevel: "preview"` for upcoming projects that should appear in the Projects page preview panel without generating a full detail page.
