@@ -832,6 +832,26 @@ select {
   background: var(--paper);
 }
 
+.upcoming-card--link {
+  display: block;
+  color: inherit;
+  scroll-margin-top: 86px;
+  text-decoration: none;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.upcoming-card--link:hover {
+  border-color: rgba(39, 65, 108, 0.55);
+  transform: translateY(-2px);
+}
+
+.upcoming-card--link:focus-visible {
+  outline: 3px solid rgba(39, 65, 108, 0.5);
+  outline-offset: 3px;
+}
+
 .upcoming-card__media {
   aspect-ratio: 16 / 9;
   overflow: hidden;
