@@ -8,7 +8,7 @@ detailLevel: "full"
 hasVideo: true
 type: "App"
 focus: "Pronunciation"
-summary: "The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation. An interactive 3D app that helps learners master Mandarin’s tricky nasal (n/ng) and retroflex (zh/ch/sh vs. z/c/s) sounds through: 3D Articulatory Visualization."
+summary: "A browser-based Mandarin pronunciation app for dialect-influenced learners that uses a movable oral model and timed challenges to help distinguish flat and retroflex consonant positions."
 cover:
   src: "/media/projects/markdown-demo/01-home-screen.svg"
   alt: "Demo home screen for the Mandarin pronunciation app"
@@ -31,6 +31,18 @@ gallery:
     caption: "The app gives immediate visual feedback after each task."
 ---
 
-The app is designed to help users systematically learn the difference between each easily confused Mandarin pronunciation. An interactive 3D app that helps learners master Mandarin’s tricky nasal (n/ng) and retroflex (zh/ch/sh vs. z/c/s) sounds through: 3D Articulatory Visualization.
+This app makes tongue placement visible for learners who find Mandarin’s flat and retroflex consonants difficult to distinguish. A dynamic mouth diagram places a movable tongue at the centre of the activity: learners hear a target syllable, drag the tongue into position and submit their answer within a timed challenge.
 
-[Video: Inline demo video placed inside the project story](https://pub-47193023d3ed40ca9b2bd213e753ba75.r2.dev/2025-2026-06-mandarin-pronunciation-app-demo-1080p-web.mp4)
+The current version focuses on contrasts such as z/zh, c/ch and s/sh. The drag range and valid placement areas are calibrated so that a correct answer depends on the articulation position rather than a simple visual guess. Bright animation, replayable rounds and browser support for mouse or touch interaction give the activity a game-like structure while keeping the focus on pronunciation practice. Future extensions remain separate from the delivered pronunciation experience.
+
+## Key features
+
+- A dynamic oral-cavity diagram with a movable tongue
+- Timed ten-question challenges built around target syllables
+- Visual validation of flat and retroflex tongue positions
+- Mouse and touch input for browser use
+- Victory and restart feedback after each round
+
+## Project outcome
+
+The final report describes a fully functional browser application covering flat and retroflex contrasts. Front/back nasal-sound practice, voice recording and personalised paths are identified as future extensions rather than completed features.
