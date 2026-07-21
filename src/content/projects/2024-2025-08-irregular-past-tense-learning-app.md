@@ -13,7 +13,7 @@ This app was created to make irregular past-tense verbs feel less like a list to
 
 Images and audio are part of the learning experience, while the mission structure is intended to keep practice active and varied. The project report emphasises the value of clear, user-friendly screens and of balancing challenge with encouragement for young learners. The public page presents this as a classroom-friendly learning tool, without implying a larger assessment result that the report does not provide.
 
-## Key features
+## A mission-based learning path
 
 - Revision activities for irregular past-tense verbs
 - Quizzes and missions for interactive practice

@@ -9,6 +9,10 @@ hasVideo: true
 type: "App"
 focus: "Pronunciation"
 summary: "A browser-based Mandarin pronunciation app for dialect-influenced learners that uses a movable oral model and timed challenges to help distinguish flat and retroflex consonant positions."
+publicLinks:
+  - label: "Open pronunciation app"
+    url: "http://62.234.150.96:1180"
+    kind: "live"
 cover:
   src: "/media/projects/markdown-demo/01-home-screen.svg"
   alt: "Demo home screen for the Mandarin pronunciation app"
@@ -35,7 +39,7 @@ This app makes tongue placement visible for learners who find Mandarin’s flat 
 
 The current version focuses on contrasts such as z/zh, c/ch and s/sh. The drag range and valid placement areas are calibrated so that a correct answer depends on the articulation position rather than a simple visual guess. Bright animation, replayable rounds and browser support for mouse or touch interaction give the activity a game-like structure while keeping the focus on pronunciation practice. Future extensions remain separate from the delivered pronunciation experience.
 
-## Key features
+## See where the tongue should go
 
 - A dynamic oral-cavity diagram with a movable tongue
 - Timed ten-question challenges built around target syllables
@@ -43,6 +47,6 @@ The current version focuses on contrasts such as z/zh, c/ch and s/sh. The drag r
 - Mouse and touch input for browser use
 - Victory and restart feedback after each round
 
-## Project outcome
+## Delivered scope
 
 The final report describes a fully functional browser application covering flat and retroflex contrasts. Front/back nasal-sound practice, voice recording and personalised paths are identified as future extensions rather than completed features.

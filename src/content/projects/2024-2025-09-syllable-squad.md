@@ -16,7 +16,7 @@ Syllable Squad supports young learners who are beginning to connect the sounds o
 
 The Syllable Squad activity turns that review into a listening task. A word is played aloud and the learner selects the number of syllables it contains. The score builds towards ten correct answers, and a wrong response invites another attempt rather than ending the session. Children can return to either the flashcards or the game, giving them a flexible path between learning and practice. The design supports both independent and repeat classroom use.
 
-## Key features
+## Flashcards meet sound play
 
 - Flashcards with vocabulary, audio, part of speech, definition and syllable information
 - Replayable audio for learner-controlled review
@@ -24,6 +24,6 @@ The Syllable Squad activity turns that review into a listening task. A word is p
 - A syllable-count game with one-to-six answer choices
 - Ten-correct-answer progress goal with repeat attempts
 
-## Project outcome
+## Reported outcome
 
 The report documents two completed sections: Flashcard Learning and Syllable Squad. A planned third word-building section and a completion pop-up were not included in the submitted version.

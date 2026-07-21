@@ -1,5 +1,6 @@
 ---
 title: "Voice-Based English Pronunciation Practice"
+reportTitle: "ProneticsHK"
 author: "Suhana Rai"
 year: "2024-2025"
 cohortId: "coh2"
@@ -13,7 +14,7 @@ ProneticsHK focuses on English pronunciation contrasts that can be difficult for
 
 Before playing, learners can use visual guides and native-speaker video examples to see and hear the target. During practice, voice recognition provides immediate feedback on the spoken response. Cantonese romanisation, progress displays and gamified elements are designed to make practice more approachable while giving learners a record of what they have already worked through. The project focuses on manageable practice for primary learners, not on formal pronunciation assessment.
 
-## Key features
+## From sound to spoken word
 
 - Speech-recognition feedback on English pronunciation
 - Levelled challenges from isolated sounds to more complex words
@@ -21,6 +22,6 @@ Before playing, learners can use visual guides and native-speaker video examples
 - Cantonese romanisation where it supports understanding
 - Progress tracking and game-like motivation features
 
-## Project outcome
+## Evaluation focus
 
 The report records user-acceptance testing with Primary 3–6 pupils, who gave the app an overall 4/5 rating. It identifies broader sound coverage, dialogue practice and community features as future work.

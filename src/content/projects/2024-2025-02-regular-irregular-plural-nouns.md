@@ -13,7 +13,7 @@ This flashcard game helps beginning English learners distinguish regular and irr
 
 The design makes the contrast visible: regular plurals use two matching images, while irregular plurals use two different ones. On the answer side, highlighted changes, hints and pronunciation provide another opportunity to notice the pattern. Learners can then choose Again, Good or Easy to set a return date, creating a lightweight review cycle that encourages repeated recall. A detailed menu keeps the review schedule visible.
 
-## Key features
+## What happens on each card
 
 - A 340-word dataset of regular and irregular plural nouns
 - Contextual fill-in-the-blank flashcards with regular/irregular choices
@@ -21,6 +21,6 @@ The design makes the contrast visible: regular plurals use two matching images, 
 - Visual contrast between regular and irregular plural forms
 - Again, Good and Easy review controls with return dates
 
-## Project outcome
+## Completed build
 
 The report describes a working HTML, CSS and JavaScript flashcard game in which the card controls and audio function normally. The author identifies richer interactions and improved card animation as future refinements.

@@ -13,7 +13,7 @@ This project supports Pakistani families in Hong Kong who are navigating Urdu, E
 
 The resource is organised around familiar daily themes such as basic phrases, colours, body parts, transport, greetings, emotions and fruits. A card can present the same word or phrase across the relevant languages, creating a bridge between home language, school language and the local community. The project remains a self-study flashcard resource, with interactive conversation practice and wider user testing identified as later needs. It can suit study at home or in a classroom.
 
-## Key features
+## Languages for daily life
 
 - Urdu, English, Cantonese and Traditional Chinese study material
 - Themed flashcard decks for practical daily vocabulary
@@ -21,6 +21,6 @@ The resource is organised around familiar daily themes such as basic phrases, co
 - A quiz deck for active review
 - Anki-based personalised study and spaced repetition
 
-## Project outcome
+## Resource scope
 
 The report documents eight completed decks totalling 100 cards. It notes that target-user testing, richer everyday contexts and interactive social practice were not yet part of the submitted resource.

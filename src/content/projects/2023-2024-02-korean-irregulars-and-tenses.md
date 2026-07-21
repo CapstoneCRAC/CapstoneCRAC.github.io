@@ -16,7 +16,7 @@ This Anki-based learning resource focuses on a part of Korean grammar that often
 
 The resource is split between learning and testing. The Korean Irregular Word deck introduces a word with its English meaning, word class and picture, then reveals its tense forms. The Korean Irregular Test deck places those forms in sentences, asking learners to enter or select the appropriate answer. Immediate colour feedback makes the result visible before the learner continues to the next item. Tags group the cards by irregular type, helping learners concentrate on a particular pattern when they return.
 
-## Key features
+## Two decks, one learning loop
 
 - Separate learning and test decks in Anki
 - Coverage of ㄷ, ㅂ and ㄹ irregular forms
@@ -24,6 +24,6 @@ The resource is split between learning and testing. The Korean Irregular Word de
 - 50 illustrated word flashcards with tags by irregular type
 - Around 300 sentence-based test cards with corrective feedback
 
-## Project outcome
+## What was delivered
 
 The report documents two completed decks: 50 word cards and roughly 300 test sentences. Further irregular patterns, explanations for incorrect answers and additional tense topics are proposed for future development.

@@ -18,6 +18,7 @@ const projects = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
+    reportTitle: z.string().optional(),
     author: z.string(),
     year: z.string(),
     cohortId: z.string(),
@@ -27,6 +28,15 @@ const projects = defineCollection({
     type: z.string().optional(),
     focus: z.string().optional(),
     summary: z.string(),
+    publicLinks: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string().url(),
+          kind: z.enum(["live", "source", "resource"]).default("live")
+        })
+      )
+      .default([]),
     cover: z
       .object({
         src: z.string(),

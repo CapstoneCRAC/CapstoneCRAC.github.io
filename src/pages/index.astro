@@ -42,21 +42,31 @@ function displayYear(year: string) {
         recentProjects.length > 0 ? (
           <div class="project-card-grid">
             {recentProjects.map((project, index) => (
-              <a class="project-card" href={withBase(`/projects/#${project.id}`)}>
-                <div class="project-card__image">
-                  {
-                    project.data.cover ? (
-                      <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
-                    ) : (
-                      <ProjectVisual order={project.data.order ?? index + 1} compact />
-                    )
-                  }
-                </div>
-                <div class="project-card__body">
-                  <h3 class="project-card__title">{project.data.title}</h3>
-                  <p class="project-card__author">{project.data.author} · {displayYear(project.data.year)}</p>
-                </div>
-              </a>
+              <article class="project-card">
+                <a class="project-card__detail" href={withBase(`/projects/#${project.id}`)}>
+                  <div class="project-card__image">
+                    {
+                      project.data.cover ? (
+                        <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                      ) : (
+                        <ProjectVisual order={project.data.order ?? index + 1} compact />
+                      )
+                    }
+                  </div>
+                  <div class="project-card__body">
+                    {project.data.publicLinks.length > 0 && <span class="public-chip">↗ Public project</span>}
+                    <h3 class="project-card__title">{project.data.title}</h3>
+                    <p class="project-card__author">{project.data.author} · {displayYear(project.data.year)}</p>
+                  </div>
+                </a>
+                {
+                  project.data.publicLinks[0] && (
+                    <a class="project-card__public" href={project.data.publicLinks[0].url} target="_blank" rel="noreferrer">
+                      {project.data.publicLinks[0].label} <span aria-hidden="true">↗</span>
+                    </a>
+                  )
+                }
+              </article>
             ))}
           </div>
         ) : (

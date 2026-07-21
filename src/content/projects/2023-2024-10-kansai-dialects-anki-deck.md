@@ -13,7 +13,7 @@ This Anki deck introduces the Kansai dialect used around Kyoto, Osaka and Kobe t
 
 Each card pairs an illustrated situation with a question drawn from or adapted from Kansai vernacular material. The deck is designed for flexible study on a browser, phone or tablet, and its quiz format allows learners to make as many attempts as they need. It also uses friendly Kansai-style feedback to keep the tone light while learners work through forms for permission, obligation, cause, modality, mood and completion.
 
-## Key features
+## Inside the Anki deck
 
 - Kansai dialect grammar and vocabulary for the Keihanshin area
 - Approximately 200 quiz questions
@@ -21,6 +21,6 @@ Each card pairs an illustrated situation with a question drawn from or adapted f
 - Illustrations that support the situation behind each question
 - Anki-based review on browser, mobile and tablet
 
-## Project outcome
+## Deck scope
 
 Ten Japanese-speaking users evaluated the deck, giving average ratings between 2.5 and 2.7 on its reported five-point measures. Participants recommended adding voice-over to strengthen auditory learning, a feature not included in the submitted deck.

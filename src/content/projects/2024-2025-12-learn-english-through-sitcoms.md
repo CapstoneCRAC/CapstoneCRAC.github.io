@@ -13,12 +13,12 @@ This project explores a web-based approach to learning English through sitcoms. 
 
 The submitted report is mainly a reflection on the development journey rather than a functional specification. It does not provide enough reliable evidence to describe a detailed, completed public feature set. The public page therefore keeps the introduction modest and avoids claiming specific activities, feedback systems or learning results until the project output or video has been reviewed.
 
-## Key features
+## Context through sitcom scenes
 
 - English learning framed around sitcom material
 - Use of video clips and subtitle-based resources
 - A web-app setting for contextual language practice
 
-## Project outcome
+## Evidence available
 
 Needs source/output review before any feature-level or effectiveness claim is published.

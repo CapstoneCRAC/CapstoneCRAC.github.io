@@ -16,7 +16,7 @@ Cultural Quest turns everyday Hong Kong language and cultural references into a 
 
 Each quiz battle makes a correct answer part of the game: it reduces an opponent’s health, while an incorrect answer prompts feedback and another chance to learn. Players collect culturally meaningful items, use hints and add correctly answered expressions to a growing glossary. The game can be saved and resumed, allowing the learner to keep exploring the same cultural world over time.
 
-## Key features
+## Language learning inside an RPG
 
 - RPG-style quiz battles with NPCs and health points
 - Hong Kong English, local phrases and cultural-context questions
@@ -24,6 +24,6 @@ Each quiz battle makes a correct answer part of the game: it reduces an opponent
 - Hints and immediate feedback during challenges
 - A personalised glossary plus save-and-return game state
 
-## Project outcome
+## What the report documents
 
 The report documents a playable browser-based game with a start screen, gameplay display, glossary and save function. More locations, questions, pronunciation practice and cooperative modes are identified as future development.

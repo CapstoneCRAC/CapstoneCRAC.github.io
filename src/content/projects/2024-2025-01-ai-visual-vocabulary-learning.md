@@ -1,5 +1,6 @@
 ---
 title: "AI Visual Vocabulary Learning"
+reportTitle: "Vocapture"
 author: "Tang Wing Lam"
 year: "2024-2025"
 cohortId: "coh2"
@@ -16,7 +17,7 @@ Vocapture makes vocabulary learning begin with a learner’s own image. Users up
 
 The platform also gives each learner a way to organise and revisit that material. Personal Word Playlists keep cards together by study topic and date; redesigned cards include UK and US pronunciation options and a note area. A short multiple-choice quiz draws on the learner’s cards, while the Dictionary Assistant can clarify a word or explain a previous quiz answer when extra support is needed.
 
-## Key features
+## From a photograph to a word playlist
 
 - Photo upload that supports AI-generated vocabulary flashcards
 - Personal Word Playlists for saving and organising cards
@@ -24,6 +25,6 @@ The platform also gives each learner a way to organise and revisit that material
 - Notes plus UK and US pronunciation on the flashcard view
 - AI-generated five-question review quizzes and a Dictionary Assistant
 
-## Project outcome
+## What testing found
 
 The report documents technical and user testing of the flashcards, playlists, quiz and assistant. Five invited users gave high scores for interface clarity, ease of operation and card design, while more quiz questions and targeted review were identified as future improvements.

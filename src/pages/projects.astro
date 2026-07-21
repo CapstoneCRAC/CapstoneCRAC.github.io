@@ -85,25 +85,39 @@ function statusClass(status: SectionStatus) {
               section.cohort.data.displayMode === "full" ? (
                 <div class="current-project-grid">
                   {section.projects.map((project, index) => (
-                    <a class="full-project-card" id={project.id} href={withBase(`/projects/${project.id}/`)}>
-                      <div class="full-project-card__media">
-                        {
-                          project.data.cover ? (
-                            <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
-                          ) : (
-                            <ProjectVisual order={project.data.order ?? index + 1} />
-                          )
-                        }
-                      </div>
-                      <div class="full-project-card__body">
-                        <div class="full-project-card__top">
-                          {project.data.hasVideo && <span class="video-chip">▸ Video</span>}
+                    <article class="full-project-card" id={project.id}>
+                      <a class="full-project-card__detail" href={withBase(`/projects/${project.id}/`)}>
+                        <div class="full-project-card__media">
+                          {
+                            project.data.cover ? (
+                              <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                            ) : (
+                              <ProjectVisual order={project.data.order ?? index + 1} />
+                            )
+                          }
                         </div>
-                        <h3 class="full-project-card__title">{project.data.title}</h3>
-                        <p class="full-project-card__author">{project.data.author}</p>
-                        <p class="full-project-card__desc">{project.data.summary}</p>
-                      </div>
-                    </a>
+                        <div class="full-project-card__body">
+                          <div class="full-project-card__top">
+                            {project.data.hasVideo && <span class="video-chip">▸ Video</span>}
+                            {project.data.publicLinks.length > 0 && <span class="public-chip">↗ Public project</span>}
+                          </div>
+                          <h3 class="full-project-card__title">{project.data.title}</h3>
+                          <p class="full-project-card__author">{project.data.author}</p>
+                          <p class="full-project-card__desc">{project.data.summary}</p>
+                        </div>
+                      </a>
+                      {
+                        project.data.publicLinks.length > 0 && (
+                          <div class="full-project-card__links" aria-label={`Public links for ${project.data.title}`}>
+                            {project.data.publicLinks.map((link) => (
+                              <a href={link.url} target="_blank" rel="noreferrer">
+                                {link.label} <span aria-hidden="true">↗</span>
+                              </a>
+                            ))}
+                          </div>
+                        )
+                      }
+                    </article>
                   ))}
                 </div>
               ) : (
@@ -111,26 +125,36 @@ function statusClass(status: SectionStatus) {
                   <div class="upcoming-grid">
                     {section.projects.map((project, index) =>
                       project.data.detailLevel === "full" ? (
-                        <a
-                          class="upcoming-card upcoming-card--link"
-                          id={project.id}
-                          href={withBase(`/projects/${project.id}/`)}
-                        >
-                          <div class="upcoming-card__media">
-                            {
-                              project.data.cover ? (
-                                <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
-                              ) : (
-                                <ProjectVisual order={project.data.order ?? index + 1} compact />
-                              )
-                            }
-                          </div>
-                          <div class="upcoming-card__body">
-                            <h3 class="upcoming-card__title">{project.data.title}</h3>
-                            <p class="upcoming-card__author">{project.data.author}</p>
-                            <p class="upcoming-card__desc">{project.data.summary}</p>
-                          </div>
-                        </a>
+                        <article class="upcoming-card upcoming-card--link" id={project.id}>
+                          <a class="upcoming-card__detail" href={withBase(`/projects/${project.id}/`)}>
+                            <div class="upcoming-card__media">
+                              {
+                                project.data.cover ? (
+                                  <img src={withBase(project.data.cover.src)} alt={project.data.cover.alt} loading="lazy" />
+                                ) : (
+                                  <ProjectVisual order={project.data.order ?? index + 1} compact />
+                                )
+                              }
+                            </div>
+                            <div class="upcoming-card__body">
+                              {project.data.publicLinks.length > 0 && <span class="public-chip">↗ Public project</span>}
+                              <h3 class="upcoming-card__title">{project.data.title}</h3>
+                              <p class="upcoming-card__author">{project.data.author}</p>
+                              <p class="upcoming-card__desc">{project.data.summary}</p>
+                            </div>
+                          </a>
+                          {
+                            project.data.publicLinks.length > 0 && (
+                              <div class="upcoming-card__links" aria-label={`Public links for ${project.data.title}`}>
+                                {project.data.publicLinks.map((link) => (
+                                  <a href={link.url} target="_blank" rel="noreferrer">
+                                    {link.label} <span aria-hidden="true">↗</span>
+                                  </a>
+                                ))}
+                              </div>
+                            )
+                          }
+                        </article>
                       ) : (
                         <article class="upcoming-card" id={project.id}>
                           <div class="upcoming-card__media">

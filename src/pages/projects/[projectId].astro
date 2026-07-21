@@ -16,99 +16,110 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 const {
   title,
+  reportTitle,
   author,
   year,
   summary,
+  cover,
   video,
   gallery,
+  publicLinks,
 } = project.data;
-const closingFigure = gallery.length > 0 ? gallery[gallery.length - 1] : null;
+
+const heroImage = !video ? (cover ?? gallery[0]) : null;
+const galleryItems = heroImage && !cover ? gallery.slice(1) : gallery;
+const hasHeroMedia = Boolean(video || heroImage);
+const hasGallery = galleryItems.length > 0;
 
 function displayYear(value: string) {
   return value.replace("-", "–");
 }
 ---
 
-<BaseLayout title={`${title} | Projects`} description={summary}>
+<BaseLayout title={`${reportTitle ?? title} | Projects`} description={summary}>
   <main>
-    <section class="detail-head detail-head--plain">
+    <section class:list={["detail-hero", { "detail-hero--with-media": hasHeroMedia }] }>
       <div class="wrap">
-        <a class="back-link" href={withBase("/projects/")}>← Back to projects</a>
-        <h1 class="detail-title">{title}</h1>
+        <a class="back-link" href={withBase("/projects/")}>← All projects</a>
+
+        <div class:list={["detail-hero__grid", { "detail-hero__grid--text": !hasHeroMedia }] }>
+          <div class="detail-hero__copy">
+            <p class="detail-overline">Student project · {displayYear(year)}</p>
+            <h1 class="detail-title">{reportTitle ?? title}</h1>
+            {reportTitle && <p class="detail-source-title">Published listing: {title}</p>}
+            <p class="detail-summary">{summary}</p>
+            <p class="detail-byline">By <strong>{author}</strong></p>
+            {
+              publicLinks.length > 0 && (
+                <div class="detail-actions" aria-label="Public project links">
+                  {publicLinks.map((link) => (
+                    <a
+                      class:list={["project-public-link", `project-public-link--${link.kind}`]}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              )
+            }
+          </div>
+
+          {
+            video && (
+              <figure class="detail-feature detail-feature--video">
+                <div class="detail-feature__media video-frame">
+                  <video controls preload="metadata" aria-label={`${reportTitle ?? title} demo video`}>
+                    <source src={withBase(video.src)} type={video.type} />
+                    Video playback is unavailable in this browser.
+                  </video>
+                </div>
+                <figcaption>{video.caption ?? "Project demo"}{video.duration && ` · ${video.duration}`}</figcaption>
+              </figure>
+            )
+          }
+
+          {
+            heroImage && (
+              <figure class="detail-feature detail-feature--image">
+                <div class="detail-feature__media">
+                  <img src={withBase(heroImage.src)} alt={heroImage.alt} loading="eager" />
+                </div>
+                {"caption" in heroImage && heroImage.caption && <figcaption>{heroImage.caption}</figcaption>}
+              </figure>
+            )
+          }
+        </div>
       </div>
     </section>
 
-    <div class="wrap detail-grid">
+    <div class:list={["wrap", "detail-body", { "detail-body--with-gallery": hasGallery }] }>
       <article class="detail-main story">
+        <div class="story-marker" aria-hidden="true">Project story</div>
         <div class="project-story">
           <Content />
         </div>
-
-        {
-          closingFigure && (
-            <figure class="closing-figure">
-              <div class="closing-figure__image">
-                <img src={withBase(closingFigure.src)} alt={closingFigure.alt} loading="lazy" />
-              </div>
-              <figcaption class="figcaption">
-                {closingFigure.caption ?? closingFigure.title}
-              </figcaption>
-            </figure>
-          )
-        }
       </article>
 
-      <aside class="detail-aside" aria-label="Project details">
-        <section class="panel panel--meta" aria-labelledby="project-info-heading">
-          <div class="panel-label" id="project-info-heading">Project info</div>
-          <dl class="meta-list">
-            <div class="meta-item">
-              <dt>Author</dt>
-              <dd>{author}</dd>
+      {
+        hasGallery && (
+          <aside class="detail-gallery" aria-label="Project gallery">
+            <div class="detail-gallery__label">Selected screens</div>
+            <div class="gallery-list">
+              {galleryItems.map((item) => (
+                <a class="gallery-thumb" href={withBase(item.src)} target="_blank" rel="noreferrer">
+                  <div class="gallery-thumb__image">
+                    <img src={withBase(item.src)} alt={item.alt} loading="lazy" />
+                  </div>
+                  <p class="gallery-thumb__caption">{item.caption ?? item.title}</p>
+                </a>
+              ))}
             </div>
-            <div class="meta-item">
-              <dt>Year</dt>
-              <dd>{displayYear(year)}</dd>
-            </div>
-          </dl>
-        </section>
-
-        {
-          video && (
-            <section class="panel video-panel" aria-labelledby="video-heading">
-              <div class="panel-label" id="video-heading">Video</div>
-              <div class="video-frame">
-                <video controls preload="metadata" aria-label={`${title} demo video`}>
-                  <source src={withBase(video.src)} type={video.type} />
-                  Video playback is unavailable in this browser.
-                </video>
-              </div>
-              <p class="video-meta">
-                {video.caption ?? "Demo walkthrough"}
-                {video.duration && ` · ${video.duration}`}
-              </p>
-            </section>
-          )
-        }
-
-        {
-          gallery.length > 0 && (
-            <section class="panel" aria-labelledby="gallery-heading">
-              <div class="panel-label" id="gallery-heading">Gallery</div>
-              <div class="gallery-list">
-                {gallery.map((item) => (
-                  <a class="gallery-thumb" href={withBase(item.src)} target="_blank" rel="noreferrer">
-                    <div class="gallery-thumb__image">
-                      <img src={withBase(item.src)} alt={item.alt} loading="lazy" />
-                    </div>
-                    <p class="gallery-thumb__caption">{item.caption ?? item.title}</p>
-                  </a>
-                ))}
-              </div>
-            </section>
-          )
-        }
-      </aside>
+          </aside>
+        )
+      }
     </div>
   </main>
 </BaseLayout>

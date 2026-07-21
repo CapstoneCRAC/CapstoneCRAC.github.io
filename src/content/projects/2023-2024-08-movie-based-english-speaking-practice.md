@@ -13,7 +13,7 @@ This app gives English learners a way to practise speaking through short movie s
 
 On the practice screen, learners can listen to a line, speak it through the microphone and see speech-to-text feedback that highlights matched and unmatched words. A separate recording screen lets them make a voice-over for the scene and play it back afterwards. An additional section introduces how intonation and speech acts change with emotions such as excitement, anger and sadness.
 
-## Key features
+## A scene-by-scene practice flow
 
 - Difficulty, movie and scene selection across a 12-film dataset
 - Embedded clip playback for line-by-line pronunciation practice
@@ -21,6 +21,6 @@ On the practice screen, learners can listen to a line, speak it through the micr
 - Voice-over recording and playback
 - Lessons on intonation and emotional speech acts
 
-## Project outcome
+## Prototype and priorities
 
 The report documents a five-page functional interface and user testing. It identifies more practice material, a dedicated database and more precise speech analysis as the next development priorities.

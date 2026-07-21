@@ -16,7 +16,7 @@ This app helps non-native English speakers make idioms easier to recognise and r
 
 The project also gives learners tools for returning to material in their own way. They can move forward and back through the idioms, add a learning image to a note, type or draw their own notes and save a screen capture for later. A search feature lets users look up a full idiom or a key word, then open the matching entry directly from the results.
 
-## Key features
+## Learn, note and search
 
 - A collection of 150 idioms with illustrations
 - Chinese and English explanations with sample sentences
@@ -24,6 +24,6 @@ The project also gives learners tools for returning to material in their own way
 - A notes space for typing and drawing in different colours
 - Search by keyword or full idiom
 
-## Project outcome
+## Feedback and next steps
 
 The final report documents the learning, notes and search functions. Classmate feedback led to a clearer toolbar and suggestions for larger text, contact support, a progress view and a favourites list in later versions.
