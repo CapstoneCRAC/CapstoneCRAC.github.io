@@ -6,6 +6,9 @@ cohortId: "coh2"
 order: 6
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2024-2025-06-email-reply-support-tool.jpg"
+  alt: "Email Reply Support Tool homepage with searchable writing scenarios"
 summary: "A student-friendly website that offers local, practical examples and advice to help learners confidently plan clear, polite replies to common school and workplace emails."
 ---
 

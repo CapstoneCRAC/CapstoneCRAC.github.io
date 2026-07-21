@@ -6,6 +6,9 @@ cohortId: "coh2"
 order: 1
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2024-2025-01-ai-visual-vocabulary-learning.jpg"
+  alt: "Vocabulary flashcard for the word clown with UK and US pronunciation controls"
 summary: "Vocapture turns learners’ own photographs into a personal vocabulary study space, pairing AI-supported flashcards with word lists, notes, pronunciation, quizzes and a built-in dictionary assistant."
 ---
 

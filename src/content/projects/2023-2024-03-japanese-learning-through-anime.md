@@ -6,6 +6,9 @@ cohortId: "coh1"
 order: 3
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2023-2024-03-japanese-learning-through-anime.jpg"
+  alt: "Japanese spelling quiz screen with three answer choices"
 summary: "A Japanese-learning web app that uses anime-themed vocabulary, pronunciation support and a relaxed quiz to help learners build a first foundation in scripts and everyday words."
 ---
 

@@ -6,6 +6,9 @@ cohortId: "coh2"
 order: 10
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2024-2025-10-present-tense-learning-app.jpg"
+  alt: "Present tense lesson screen from the learning app"
 summary: "An interactive grammar app that helps learners compare present and present continuous forms through bilingual explanations, visual practice, exercises, feedback and a small reward shop."
 ---
 

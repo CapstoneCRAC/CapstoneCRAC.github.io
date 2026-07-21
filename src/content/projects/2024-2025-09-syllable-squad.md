@@ -6,6 +6,9 @@ cohortId: "coh2"
 order: 9
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2024-2025-09-syllable-squad.jpg"
+  alt: "Syllables Flashcard screen for the word Acceptable"
 summary: "A children’s spelling app that combines vocabulary flashcards with an audio-led syllable game, helping learners aged 3–10 notice sounds, segment words and practise at their own pace."
 ---
 

@@ -6,6 +6,9 @@ cohortId: "coh1"
 order: 2
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2023-2024-02-korean-irregulars-and-tenses.jpg"
+  alt: "Korean irregulars quiz screen in a flashcard app"
 summary: "An Anki learning set that helps Korean learners practise ㄷ, ㅂ and ㄹ irregular forms across present, past and future tense through illustrated cards and sentence-based review."
 ---
 

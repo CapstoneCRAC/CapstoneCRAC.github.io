@@ -6,6 +6,9 @@ cohortId: "coh1"
 order: 7
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2023-2024-07-english-word-stress-flashcards.jpg"
+  alt: "Word stress practice question with two audio choices"
 summary: "A 45-question flashcard deck that teaches English word stress through piano-pitch listening tasks, helping Hong Kong learners connect a higher note with a word’s primary stress."
 ---
 

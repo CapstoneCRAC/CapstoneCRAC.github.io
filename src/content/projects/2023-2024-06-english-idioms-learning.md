@@ -6,6 +6,9 @@ cohortId: "coh1"
 order: 6
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2023-2024-06-english-idioms-learning.jpg"
+  alt: "Home screen of the Idiom App with learning and search options"
 summary: "A free English idioms app for flexible self-study, combining memorable illustrations, Chinese and English explanations, example sentences, personal notes and direct search for everyday practice."
 ---
 

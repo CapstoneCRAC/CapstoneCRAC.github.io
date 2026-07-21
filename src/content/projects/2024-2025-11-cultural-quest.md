@@ -6,6 +6,9 @@ cohortId: "coh2"
 order: 11
 detailLevel: "full"
 hasVideo: false
+cover:
+  src: "/media/projects/covers/2024-2025-11-cultural-quest.jpg"
+  alt: "Hong Kong English RPG Quiz start screen"
 summary: "An RPG-style English and intercultural quiz that places Hong Kong phrases, places and cultural references inside battles, item collection and a personal glossary for newcomers to the city."
 ---
 
