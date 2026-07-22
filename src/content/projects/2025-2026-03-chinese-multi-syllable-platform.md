@@ -6,16 +6,21 @@ cohortId: "coh3"
 order: 3
 detailLevel: "full"
 hasVideo: false
-summary: "A playable Bubble Shooter-style learning game where learners match Chinese multi-syllable characters with the correct Pinyin pronunciation in a browser, progressing through increasingly challenging levels."
+summary: "A Bubble Shooter-style game turns each polyphonic Chinese character into a Pinyin choice, with levels that become more demanding as the board fills."
+proposal:
+  title: "A game for polyphonic characters"
+  summary: "The proposal imagined a Bubble Shooter-style learning loop: shoot Pinyin to match a Chinese character with more than one possible reading, then use stages and a growing dataset to make pronunciation choices progressively harder."
+  audience: "Learners practising Chinese multi-syllable characters and Pinyin."
+  concept: "Turn a pronunciation distinction into an immediate visual match."
 publicLinks:
   - label: "View project source"
     url: "https://github.com/icey0211/git-github.com-icey0211-Polyphonic-Character-Learning-Game/tree/main/chinese-bubble-shooter"
     kind: "source"
 ---
 
-This educational game focuses on Chinese characters whose pronunciation and meaning change with context. A character appears in the bubble launcher and the player aims for the matching Pinyin bubble. Correct matches clear bubbles, while incorrect choices add pressure to the board, making each decision part of the game’s learning loop.
+The proposal makes polyphonic characters into targets rather than definitions to memorise. In the reported game, a character arrives in the launcher and the learner sends its Pinyin towards the matching bubble; a correct hit clears space, while a wrong one makes the next decision feel more urgent.
 
-The experience is organised into five stages and 100 levels. Early levels introduce familiar characters with clearly different readings; later levels bring in more pronunciations and less familiar characters. A Change Words button resolves situations where the correct matching bubble is blocked, allowing the player to continue while adding a small strategic choice to play. The game gives learners a clear visual result for every pronunciation choice before the next attempt.
+The final build scales that loop across five stages and 100 levels. Familiar readings appear first; later levels add less familiar characters and more possible pronunciations. When the right bubble is blocked, the completed Change Words control keeps the board from becoming a dead end — a small design repair that the report explicitly records.
 
 ## A pronunciation choice becomes play
 

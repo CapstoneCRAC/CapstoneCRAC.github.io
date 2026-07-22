@@ -24,6 +24,7 @@ const {
   video,
   gallery,
   publicLinks,
+  proposal,
 } = project.data;
 
 const heroImage = !video ? (cover ?? gallery[0]) : null;
@@ -97,7 +98,38 @@ function displayYear(value: string) {
 
     <div class:list={["wrap", "detail-body", { "detail-body--with-gallery": hasGallery }] }>
       <article class="detail-main story">
-        <div class="story-marker" aria-hidden="true">Project story</div>
+        {
+          proposal && (
+            <section class:list={["proposal-brief", { "proposal-brief--text-only": !proposal.visual }]} aria-labelledby="proposal-heading">
+              {
+                proposal.visual && (
+                  <figure class="proposal-brief__visual">
+                    <div class="proposal-brief__image">
+                      <img src={withBase(proposal.visual.src)} alt={proposal.visual.alt} loading="lazy" />
+                    </div>
+                    <figcaption>From the original proposal</figcaption>
+                  </figure>
+                )
+              }
+              <div class="proposal-brief__copy">
+                <div class="proposal-brief__eyebrow">In the proposal</div>
+                <h2 id="proposal-heading">{proposal.title}</h2>
+                <p>{proposal.summary}</p>
+                {
+                  proposal.audience && (
+                    <p class="proposal-brief__detail"><strong>Designed for</strong>{proposal.audience}</p>
+                  )
+                }
+                {
+                  proposal.concept && (
+                    <p class="proposal-brief__detail"><strong>Proposal concept</strong>{proposal.concept}</p>
+                  )
+                }
+              </div>
+            </section>
+          )
+        }
+        <div class="story-marker" aria-hidden="true">{proposal ? "What the final report shows" : "Project story"}</div>
         <div class="project-story">
           <Content />
         </div>

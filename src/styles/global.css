@@ -1164,6 +1164,109 @@ select {
   min-width: 0;
 }
 
+.proposal-brief {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+  gap: 28px;
+  align-items: stretch;
+  margin: 0 0 54px;
+  padding: 20px;
+  border: 1px solid rgba(20, 41, 76, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f8f4eb 0%, #f2f6f2 100%);
+  box-shadow: 0 18px 38px rgba(20, 41, 76, 0.07);
+}
+
+.proposal-brief--text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.proposal-brief__visual {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  margin: 0;
+}
+
+.proposal-brief__image {
+  display: flex;
+  min-height: 190px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.proposal-brief__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.proposal-brief__visual figcaption {
+  margin: 9px 2px 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.proposal-brief__copy {
+  align-self: center;
+  min-width: 0;
+  padding: 5px 4px 5px 0;
+}
+
+.proposal-brief__eyebrow {
+  margin-bottom: 10px;
+  color: var(--amber);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.proposal-brief h2 {
+  max-width: 620px;
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: clamp(1.22rem, 2.2vw, 1.72rem);
+  line-height: 1.14;
+}
+
+.proposal-brief__copy > p:not(.proposal-brief__detail) {
+  max-width: 620px;
+  margin: 0;
+  color: #333b48;
+  font-family: var(--serif);
+  font-size: 1.03rem;
+  line-height: 1.6;
+}
+
+.proposal-brief__detail {
+  display: grid;
+  grid-template-columns: 102px minmax(0, 1fr);
+  gap: 10px;
+  max-width: 620px;
+  margin: 17px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid rgba(20, 41, 76, 0.13);
+  color: #4d5665;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.proposal-brief__detail strong {
+  color: var(--navy-600);
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 .story-marker,
 .detail-gallery__label {
   display: flex;
@@ -1437,6 +1540,14 @@ select:focus-visible,
   .detail-gallery {
     position: static;
     margin-top: 48px;
+  }
+
+  .proposal-brief {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-brief__copy {
+    padding: 0;
   }
 
   .gallery-list {
