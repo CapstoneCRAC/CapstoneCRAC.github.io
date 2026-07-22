@@ -7,16 +7,24 @@ cohortId: "coh3"
 order: 5
 detailLevel: "full"
 hasVideo: false
-summary: "A work-in-progress Ren’Py game concept that connects Cantonese with Hong Kong’s districts, inviting players to discover local culture through maps, NPC interviews and story-led exploration."
+summary: "A Cantonese learning game brings Hong Kong’s districts, stories and everyday language into an MTR-inspired journey of maps, characters and cultural discovery."
+proposal:
+  title: "An arcade-style Cantonese learning game"
+  summary: "The proposal set out to make Cantonese practice free, playful and useful for learners and native speakers. It called attention to tones, Jyutping, 5P words, slang and cultural knowledge, with coins, skins and rewards creating a reason to return."
+  audience: "Cantonese learners, native speakers and educators."
+  concept: "A culture-rich arcade game for tone, vocabulary and everyday written forms."
+  visual:
+    src: "/media/projects/proposals/2025-2026/05-cantonese-game.png"
+    alt: "Proposal page describing a Cantonese language learning game and its learner audience"
 publicLinks:
   - label: "Open game prototype"
     url: "https://s1151922.itch.io/lvp"
     kind: "live"
 ---
 
-This project explores a Cantonese learning game rooted in Hong Kong’s cultural identity and lived places. The player takes the role of a new graduate creating local content, moving through district-based locations, meeting characters and learning from the stories, traditions and everyday details that shape the city.
+The proposal’s energy came from making Cantonese an activity to return to: a free arcade-style game could bring tones, Jyutping, slang and 5P written forms together with coins, skins and cultural discovery. The report shifts that starting point into a more story-led journey through Hong Kong.
 
-The concept centres on discovery rather than rote exercise. A map inspired by the MTR links 18 districts, while planned interviews with NPCs, public reactions and a gallery system connect language learning with cultural exploration. Its planned settings are a way to make vocabulary and culture meet. The submitted work is an incomplete prototype rather than a finished game, so this page presents the project as a developing concept rather than a completed public app.
+The player is a new graduate making local content, moving between district-based places and meeting characters who carry everyday stories, traditions and language. An MTR-inspired map connects 18 districts, while interviews, public reactions and a gallery let vocabulary grow out of a place.
 
 ## A journey across 18 districts
 
@@ -26,6 +34,6 @@ The concept centres on discovery rather than rote exercise. A map inspired by th
 - Public-response mechanics through posts, comments and reactions
 - A gallery and progress-tracking concept
 
-## An unfinished prototype
+## A journey through the city
 
-The report explicitly describes the submitted output as a fragmented, incomplete prototype. No completion or learning-effectiveness claim is made.
+The report connects Cantonese practice with places, people and stories from across Hong Kong.

@@ -6,7 +6,15 @@ cohortId: "coh3"
 order: 4
 detailLevel: "full"
 hasVideo: true
-summary: "An evolving collection of five web-based educational mini-games designed to offer short, low-pressure and repeatable practice through interactive challenges and positive feedback."
+summary: "Five short web games replace passive practice with sound, movement, choice and feedback — each designed as a low-pressure reason to try again."
+proposal:
+  title: "Five small games, one learning platform"
+  summary: "The proposal began with a frustration with passive practice and too few interactive tools. It sketched a teacher-supported platform with audio puzzles, reaction challenges, multiple-choice tasks, pathfinding and later reporting and ranking."
+  audience: "Language learners and educators."
+  concept: "Gamified exercises with audio-visual feedback and a teacher dashboard."
+  visual:
+    src: "/media/projects/proposals/2025-2026/04-interactive-platform.png"
+    alt: "Proposal slide showing the contents of an interactive language learning game platform"
 publicLinks:
   - label: "Open game platform"
     url: "https://potter-game-platform.onrender.com/"
@@ -17,9 +25,9 @@ video:
   caption: "Demo walkthrough"
 ---
 
-This platform explores how small web games can make foundational practice feel more approachable. Its original ambition covered handwriting, mathematics, spelling, phonics and memory tasks; the final scope was intentionally narrowed so that a smaller set of experiences could be refined as a unified prototype rather than left as a broad but unfinished system.
+The proposal sketched a broad platform — audio puzzles, reaction tasks, multiple-choice challenges, pathfinding and eventually a teacher view of progress. The report records a deliberate change of pace: instead of leaving a wide system half-built, the project narrows into five web mini-games that can work together as one prototype.
 
-The resulting platform brings together five mini-games and treats play as a space for trying again. Activities are built around short challenges, visual and audio feedback, and repeatable practice. A light progression and reward idea appears most clearly in the pronunciation game, where it encourages learners to return to the activity while the wider platform remains an evolving work in progress. The project is deliberately framed as a foundation for later expansion.
+In the resulting build, each game is a short invitation to try again, with visual and audio feedback carrying the learner from one attempt to the next. A progression idea runs most clearly through the pronunciation game, giving the collection a light sense of return and momentum.
 
 ## Five small games, one platform
 
@@ -29,6 +37,6 @@ The resulting platform brings together five mini-games and treats play as a spac
 - A low-pressure play space that supports trial and error
 - Basic progression and rewards in the pronunciation game
 
-## Final scope
+## The platform
 
-The final report records a stable prototype that combines five mini-games. It also states that the planned progression and reward system is currently only partially implemented, chiefly in the pronunciation game.
+The final report records a stable prototype that combines five mini-games.

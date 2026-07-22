@@ -28,6 +28,20 @@ const projects = defineCollection({
     type: z.string().optional(),
     focus: z.string().optional(),
     summary: z.string(),
+    proposal: z
+      .object({
+        title: z.string(),
+        summary: z.string(),
+        audience: z.string().optional(),
+        concept: z.string().optional(),
+        visual: z
+          .object({
+            src: z.string(),
+            alt: z.string()
+          })
+          .optional()
+      })
+      .optional(),
     publicLinks: z
       .array(
         z.object({

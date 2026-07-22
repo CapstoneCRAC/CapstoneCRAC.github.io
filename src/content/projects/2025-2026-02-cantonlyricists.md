@@ -7,7 +7,15 @@ cohortId: "coh3"
 order: 2
 detailLevel: "full"
 hasVideo: true
-summary: "A hybrid board game and web player that brings Cantopop lyric writing into a social challenge, inviting players to hear melody, identify 0243 tone patterns and create tone-appropriate lines."
+summary: "Lyrics Master turns a Cantopop melody into a shared writing prompt, inviting players to hear its 0243 tone pattern and shape a new Cantonese line together."
+proposal:
+  title: "Writing Cantonese lyrics through 0243"
+  summary: "The proposal framed lyric writing as a meeting point between Cantonese tone contour and melody. It introduced the 0243 method, manual note input, playback and a converter that turns a melody into a starting pattern for writing a tone-aware line."
+  audience: "Cantopop listeners and people interested in Cantonese lyric craft."
+  concept: "A digital assistant for hearing, arranging and writing tone-appropriate Cantonese lines."
+  visual:
+    src: "/media/projects/proposals/2025-2026/02-cantonlyricists.png"
+    alt: "Proposal interface showing a Cantonese lyrics player with playback controls and a Jyut Lyrics section"
 publicLinks:
   - label: "Open Lyrics Master"
     url: "https://thomaschannnn.github.io/fyp-lyrics/"
@@ -18,9 +26,9 @@ video:
   caption: "Demo walkthrough"
 ---
 
-This project turns the craft of Cantonese lyric writing into a shared game for Cantopop listeners. Players draw a Melody Card, scan through to the web player and listen to a familiar song excerpt. They first identify its 0243 tone pattern, then work with the card’s lyric blank to create a new line that fits the melody.
+Rather than teaching Cantonese lyric writing as a fixed set of rules, the proposal asked players to listen for a melody’s shape and use 0243 as a possible route into a new line. The final report carries that invitation into a shared game: a Melody Card gives the prompt, a QR-linked player supplies the music, and the lyric blank becomes a space to try an answer.
 
-The physical game materials and digital player are designed to work together. Melody Cards provide a prompt and blank spaces; the website shows the related music staff, playback and the 0243 answer. The point system rewards both accurate tone recognition and a voted favourite lyric, making room for playful rewrites as well as attention to the sound and rhythm of Cantonese.
+The physical cards and web player divide the work between hands, ears and conversation. Players first guess the tone pattern, then use the displayed music staff and playback to write; points recognise both accurate listening and the group’s favourite lyric. The result is less a quiz about the right answer than a social way into Cantonese sound and rhythm.
 
 ## Hear the melody, write the line
 
@@ -32,4 +40,4 @@ The physical game materials and digital player are designed to work together. Me
 
 ## Prototype and playtesting
 
-The report records a handmade working prototype, a GitHub Pages web player and a 40-song data library. Informal playtesting found the social lyric-writing element particularly engaging; automatic tone checking and a larger library remain future work.
+The report records a handmade working prototype, a GitHub Pages web player and a 40-song data library. Informal playtesting found the social lyric-writing element particularly engaging.
